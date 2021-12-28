@@ -1,0 +1,14 @@
+[requires]
+glfw/3.3.6
+glad/0.1.34
+
+[options]
+glad:gl_profile=core
+glad:gl_version=4.6
+glad:spec=gl
+glad:no_loader=False
+
+[generators]
+cmake
+cmake_paths
+cmake_find_package

@@ -1,0 +1,42 @@
+{
+ "graph_lock": {
+  "nodes": {
+   "0": {
+    "options": "glad:extensions=''\nglad:gl_profile=core\nglad:gl_version=4.6\nglad:gles1_version=None\nglad:gles2_version=None\nglad:glsc2_version=None\nglad:no_loader=False\nglad:shared=False\nglad:spec=gl\nglfw:shared=False\nglfw:vulkan_static=False",
+    "requires": [
+     "1",
+     "3"
+    ],
+    "path": "..\\conanfile.txt",
+    "context": "host"
+   },
+   "1": {
+    "ref": "glfw/3.3.6",
+    "options": "shared=False\nvulkan_static=False",
+    "package_id": "72e84aac9213a09dfb0f59578ae9423a2eb326e7",
+    "prev": "0",
+    "requires": [
+     "2"
+    ],
+    "context": "host"
+   },
+   "2": {
+    "ref": "opengl/system",
+    "options": "",
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9",
+    "prev": "0",
+    "context": "host"
+   },
+   "3": {
+    "ref": "glad/0.1.34",
+    "options": "extensions=''\ngl_profile=core\ngl_version=4.6\ngles1_version=None\ngles2_version=None\nglsc2_version=None\nno_loader=False\nshared=False\nspec=gl",
+    "package_id": "01fb4a1dcdf8f1edae8a28c270965dc30981d468",
+    "prev": "0",
+    "context": "host"
+   }
+  },
+  "revisions_enabled": false
+ },
+ "version": "0.4",
+ "profile_host": "[settings]\narch=x86_64\narch_build=x86_64\nbuild_type=Debug\ncompiler=Visual Studio\ncompiler.runtime=MDd\ncompiler.version=16\nos=Windows\nos_build=Windows\n[options]\n[build_requires]\n[env]\n"
+}
