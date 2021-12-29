@@ -34,12 +34,12 @@ Installing (downloading, building) binaries...
 glad/0.1.34: Already installed!
 opengl/system: Already installed!
 glfw/3.3.6: Already installed!
-conanfile.txt: Generator txt created conanbuildinfo.txt
-conanfile.txt: Generator cmake created conanbuildinfo.cmake
 conanfile.txt: Generator cmake_paths created conan_paths.cmake
+conanfile.txt: Generator cmake created conanbuildinfo.cmake
 conanfile.txt: Generator cmake_find_package created Findglfw3.cmake
 conanfile.txt: Generator cmake_find_package created Findglad.cmake
 conanfile.txt: Generator cmake_find_package created Findopengl_system.cmake
+conanfile.txt: Generator txt created conanbuildinfo.txt
 conanfile.txt: Aggregating env generators
 conanfile.txt: Generated conaninfo.txt
 conanfile.txt: Generated graphinfo

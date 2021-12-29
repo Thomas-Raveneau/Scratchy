@@ -214,6 +214,30 @@ Sources\Mesh\Mesh.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Scratchy.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Scratchy.dir\Sources\Mesh\Mesh.cpp.s
 .PHONY : Sources\Mesh\Mesh.cpp.s
 
+Sources\Mesh\Rect.obj: Sources\Mesh\Rect.cpp.obj
+.PHONY : Sources\Mesh\Rect.obj
+
+# target to build an object file
+Sources\Mesh\Rect.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Scratchy.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Scratchy.dir\Sources\Mesh\Rect.cpp.obj
+.PHONY : Sources\Mesh\Rect.cpp.obj
+
+Sources\Mesh\Rect.i: Sources\Mesh\Rect.cpp.i
+.PHONY : Sources\Mesh\Rect.i
+
+# target to preprocess a source file
+Sources\Mesh\Rect.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Scratchy.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Scratchy.dir\Sources\Mesh\Rect.cpp.i
+.PHONY : Sources\Mesh\Rect.cpp.i
+
+Sources\Mesh\Rect.s: Sources\Mesh\Rect.cpp.s
+.PHONY : Sources\Mesh\Rect.s
+
+# target to generate assembly for a file
+Sources\Mesh\Rect.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Scratchy.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Scratchy.dir\Sources\Mesh\Rect.cpp.s
+.PHONY : Sources\Mesh\Rect.cpp.s
+
 Sources\Mesh\Shader.obj: Sources\Mesh\Shader.cpp.obj
 .PHONY : Sources\Mesh\Shader.obj
 
@@ -451,6 +475,9 @@ help:
 	@echo ... Sources/Mesh/Mesh.obj
 	@echo ... Sources/Mesh/Mesh.i
 	@echo ... Sources/Mesh/Mesh.s
+	@echo ... Sources/Mesh/Rect.obj
+	@echo ... Sources/Mesh/Rect.i
+	@echo ... Sources/Mesh/Rect.s
 	@echo ... Sources/Mesh/Shader.obj
 	@echo ... Sources/Mesh/Shader.i
 	@echo ... Sources/Mesh/Shader.s

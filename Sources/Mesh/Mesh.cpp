@@ -10,12 +10,13 @@ using namespace std;
 
 Mesh::Mesh(std::string vertexShaderPath, std::string fragmentShaderPath):
 shader(vertexShaderPath, fragmentShaderPath) {
-
+	setIsTextured(false);
 }
 
 Mesh::Mesh(std::string vertexShaderPath, std::string fragmentShaderPath, std::string texturePath):
 		shader(vertexShaderPath, fragmentShaderPath),
 		texture(texturePath) {
+	setIsTextured(true);
 }
 
 Mesh::~Mesh() {
@@ -32,8 +33,12 @@ void Mesh::drawWireframe(bool active) {
 	}
 }
 
+void Mesh::setColor(Color color) {
+	Mesh::color = color;
+}
+
 void Mesh::setTexture(std::string filepath) {
-	texture = Texture("filepath");
+	Mesh::texture = Texture(filepath);
 }
 
 void Mesh::setVertices(std::vector<Position3> vertices) {
@@ -86,4 +91,12 @@ std::vector<float> Mesh::getTexturedVertices() const {
 	}
 
 	return result;
+}
+
+bool Mesh::getIsTextured() const {
+	return Mesh::isTextured;
+}
+
+void Mesh::setIsTextured(bool isTextured) {
+	Mesh::isTextured = isTextured;
 }

@@ -114,6 +114,12 @@
 		<Unit filename="C:/Users/thoma/dev/Scratchy/Sources/Mesh/Mesh.h">
 			<Option target="Scratchy"/>
 		</Unit>
+		<Unit filename="C:/Users/thoma/dev/Scratchy/Sources/Mesh/Rect.cpp">
+			<Option target="Scratchy"/>
+		</Unit>
+		<Unit filename="C:/Users/thoma/dev/Scratchy/Sources/Mesh/Rect.h">
+			<Option target="Scratchy"/>
+		</Unit>
 		<Unit filename="C:/Users/thoma/dev/Scratchy/Sources/Mesh/Shader.cpp">
 			<Option target="Scratchy"/>
 		</Unit>

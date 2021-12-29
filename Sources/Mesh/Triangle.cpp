@@ -7,17 +7,16 @@
 
 using namespace Scratchy;
 
-const std::string VERTEX_COLOR_SHADER = std::string("../Shaders/Vertex/triangle_colored.vs");
+const std::string VERTEX_COLOR_SHADER = std::string("../Shaders/Vertex/color.vs");
 const std::string FRAGMENT_COLOR_SHADER = std::string("../Shaders/Fragment/color.fs");
 
-const std::string VERTEX_TEXTURE_SHADER = std::string("../Shaders/Vertex/triangle_textured.vs");
+const std::string VERTEX_TEXTURE_SHADER = std::string("../Shaders/Vertex/texture.vs");
 const std::string FRAGMENT_TEXTURE_SHADER = std::string("../Shaders/Fragment/texture.fs");
 
-Triangle::Triangle(Position3 a1, Position3 a2, Position3 a3, Color color) :
+Triangle::Triangle(Position3 a1, Position3 a2, Position3 a3, Color color):
 Mesh(VERTEX_COLOR_SHADER, FRAGMENT_COLOR_SHADER) {
 	setVertices(std::vector<Position3>({a1, a2, a3}));
-	Triangle::color = color;
-	isTextured = false;
+	setColor(color);
 
 	glGenVertexArrays(1, &VAO);
 	glGenBuffers(1, &VBO);
@@ -39,12 +38,12 @@ Mesh(VERTEX_COLOR_SHADER, FRAGMENT_COLOR_SHADER) {
 
 Triangle::Triangle(Position3 a1, Position3 a2, Position3 a3, std::string texturePath) :
 Mesh(VERTEX_TEXTURE_SHADER, FRAGMENT_TEXTURE_SHADER) {
+	setIsTextured(true);
 	setVertices(std::vector<Position3>({a1, a2, a3}));
 	Position2 textureCoord1(0.0f, 1.0f);
 	Position2 textureCoord2(1.0f, 1.0f);
 	Position2 textureCoord3(0.5f, 0.0f);
 	setTextureCoords(std::vector<Position2>({textureCoord1, textureCoord2, textureCoord3}));
-	isTextured = true;
 
 	glGenVertexArrays(1, &VAO);
 	glGenBuffers(1, &VBO);
@@ -63,17 +62,19 @@ Mesh(VERTEX_TEXTURE_SHADER, FRAGMENT_TEXTURE_SHADER) {
 	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
 	glEnableVertexAttribArray(1);
 
-	texture = Texture(texturePath);
+	setTexture(texturePath);
 }
 
 Triangle::~Triangle() {
-
+	glDeleteVertexArrays(1, &VAO);
+	glDeleteBuffers(1, &VBO);
 }
 
 void Triangle::draw() const {
-	if (isTextured) {
+	if (getIsTextured()) {
 		texture.render();
 	}
+
 	shader.use();
 
 	glBindVertexArray(VAO);

@@ -34,7 +34,7 @@ set(SOURCES
         ${SRC_DIR}/Mesh/Texture.cpp         ${SRC_DIR}/Mesh/Texture.h
 
         ${SRC_DIR}/Mesh/Triangle.cpp        ${SRC_DIR}/Mesh/Triangle.h
-#        ${SRC_DIR}/Mesh/Square.cpp          ${SRC_DIR}/Mesh/Square.h
+        ${SRC_DIR}/Mesh/Rect.cpp          ${SRC_DIR}/Mesh/Rect.h
 
         ${SRC_DIR}/Utils/Color.cpp          ${SRC_DIR}/Utils/Color.h
         ${SRC_DIR}/Utils/Angle.cpp          ${SRC_DIR}/Utils/Angle.h

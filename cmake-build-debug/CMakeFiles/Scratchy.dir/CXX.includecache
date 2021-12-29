@@ -38,6 +38,20 @@ intrin.h
 arm_neon.h
 -
 
+../Sources/Mesh/Mesh.h
+Mesh/Shader.h
+-
+Mesh/Texture.h
+-
+Utils/Position2.h
+-
+Utils/Position3.h
+-
+Utils/Color.h
+-
+vector
+-
+
 ../Sources/Mesh/Shader.h
 glad/glad.h
 -
@@ -132,21 +146,19 @@ GL/gl.h
 GL/glext.h
 -
 
-C:/Users/thoma/dev/Scratchy/Sources/Mesh/Mesh.cpp
-Mesh.h
-C:/Users/thoma/dev/Scratchy/Sources/Mesh/Mesh.h
+C:/Users/thoma/dev/Scratchy/Sources/Mesh/Rect.cpp
+Rect.h
+C:/Users/thoma/dev/Scratchy/Sources/Mesh/Rect.h
 
-C:/Users/thoma/dev/Scratchy/Sources/Mesh/Mesh.h
-Mesh/Shader.h
+C:/Users/thoma/dev/Scratchy/Sources/Mesh/Rect.h
+Mesh/Mesh.h
 -
-Mesh/Texture.h
--
-Utils/Position2.h
--
-Utils/Position3.h
--
-Utils/Color.h
--
-vector
+
+C:/Users/thoma/dev/Scratchy/Sources/Mesh/Triangle.cpp
+Triangle.h
+C:/Users/thoma/dev/Scratchy/Sources/Mesh/Triangle.h
+
+C:/Users/thoma/dev/Scratchy/Sources/Mesh/Triangle.h
+Mesh/Mesh.h
 -
 

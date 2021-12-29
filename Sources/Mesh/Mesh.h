@@ -57,13 +57,18 @@ namespace Scratchy {
 			virtual void draw() const {};
 
 		public:
-			void setTexture(std::string filepath);
+			std::vector<float> getVertices() const;
 			void setVertices(std::vector<Position3> vertices);
+
+			std::vector<float> getColoredVertices() const;
+			void setColor(Color color);
+
+			std::vector<float> getTexturedVertices() const;
+			void setTexture(std::string filepath);
 			void setTextureCoords(std::vector<Position2> textureCoords);
 
-			std::vector<float> getVertices() const;
-			std::vector<float> getColoredVertices() const;
-			std::vector<float> getTexturedVertices() const;
+			bool getIsTextured() const;
+			void setIsTextured(bool isTextured);
 	};
 }
 

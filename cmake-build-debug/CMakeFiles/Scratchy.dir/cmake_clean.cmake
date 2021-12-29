@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Scratchy.dir/Sources/Main/Viewport.cpp.obj"
   "CMakeFiles/Scratchy.dir/Sources/Main/Window.cpp.obj"
   "CMakeFiles/Scratchy.dir/Sources/Mesh/Mesh.cpp.obj"
+  "CMakeFiles/Scratchy.dir/Sources/Mesh/Rect.cpp.obj"
   "CMakeFiles/Scratchy.dir/Sources/Mesh/Shader.cpp.obj"
   "CMakeFiles/Scratchy.dir/Sources/Mesh/Texture.cpp.obj"
   "CMakeFiles/Scratchy.dir/Sources/Mesh/Triangle.cpp.obj"
