@@ -38,24 +38,6 @@ intrin.h
 arm_neon.h
 -
 
-../Sources/Main/Viewport.h
-glad/glad.h
--
-GLFW/glfw3.h
--
-
-../Sources/Mesh/Mesh.h
-Mesh/Shader.h
--
-Mesh/Texture.h
--
-Utils/Position3.h
--
-Utils/Color.h
--
-vector
--
-
 ../Sources/Mesh/Shader.h
 glad/glad.h
 -
@@ -82,6 +64,10 @@ iostream
 
 ../Sources/Utils/Color.h
 iostream
+-
+
+../Sources/Utils/Position2.h
+tuple
 -
 
 ../Sources/Utils/Position3.h
@@ -146,27 +132,21 @@ GL/gl.h
 GL/glext.h
 -
 
-C:/Users/thoma/dev/Scratchy/Sources/Main/Window.h
-iostream
+C:/Users/thoma/dev/Scratchy/Sources/Mesh/Mesh.cpp
+Mesh.h
+C:/Users/thoma/dev/Scratchy/Sources/Mesh/Mesh.h
+
+C:/Users/thoma/dev/Scratchy/Sources/Mesh/Mesh.h
+Mesh/Shader.h
 -
-Main/Viewport.h
+Mesh/Texture.h
+-
+Utils/Position2.h
+-
+Utils/Position3.h
 -
 Utils/Color.h
 -
-
-C:/Users/thoma/dev/Scratchy/Sources/Mesh/Triangle.h
-Mesh/Mesh.h
+vector
 -
-
-C:/Users/thoma/dev/Scratchy/Sources/main.cpp
-iostream
--
-chrono
--
-thread
--
-Mesh/Triangle.h
-C:/Users/thoma/dev/Scratchy/Sources/Mesh/Triangle.h
-Main/Window.h
-C:/Users/thoma/dev/Scratchy/Sources/Main/Window.h
 

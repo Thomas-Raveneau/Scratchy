@@ -8,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Scratchy.dir/Sources/Mesh/Triangle.cpp.obj"
   "CMakeFiles/Scratchy.dir/Sources/Utils/Angle.cpp.obj"
   "CMakeFiles/Scratchy.dir/Sources/Utils/Color.cpp.obj"
+  "CMakeFiles/Scratchy.dir/Sources/Utils/Position2.cpp.obj"
   "CMakeFiles/Scratchy.dir/Sources/Utils/Position3.cpp.obj"
   "CMakeFiles/Scratchy.dir/Sources/Utils/Vector2.cpp.obj"
   "CMakeFiles/Scratchy.dir/Sources/main.cpp.obj"

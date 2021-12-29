@@ -23,6 +23,7 @@ CMakeFiles/Scratchy.dir/Sources/Mesh/Mesh.cpp.obj
  ../Sources/Mesh/Shader.h
  ../Sources/Mesh/Texture.h
  ../Sources/Utils/Color.h
+ ../Sources/Utils/Position2.h
  ../Sources/Utils/Position3.h
  C:/Users/thoma/.conan/data/glad/0.1.34/_/_/package/01fb4a1dcdf8f1edae8a28c270965dc30981d468/include/KHR/khrplatform.h
  C:/Users/thoma/.conan/data/glad/0.1.34/_/_/package/01fb4a1dcdf8f1edae8a28c270965dc30981d468/include/glad/glad.h
@@ -48,6 +49,7 @@ CMakeFiles/Scratchy.dir/Sources/Mesh/Triangle.cpp.obj
  ../Sources/Mesh/Shader.h
  ../Sources/Mesh/Texture.h
  ../Sources/Utils/Color.h
+ ../Sources/Utils/Position2.h
  ../Sources/Utils/Position3.h
  C:/Users/thoma/.conan/data/glad/0.1.34/_/_/package/01fb4a1dcdf8f1edae8a28c270965dc30981d468/include/KHR/khrplatform.h
  C:/Users/thoma/.conan/data/glad/0.1.34/_/_/package/01fb4a1dcdf8f1edae8a28c270965dc30981d468/include/glad/glad.h
@@ -60,6 +62,9 @@ CMakeFiles/Scratchy.dir/Sources/Utils/Angle.cpp.obj
 CMakeFiles/Scratchy.dir/Sources/Utils/Color.cpp.obj
  C:/Users/thoma/dev/Scratchy/Sources/Utils/Color.cpp
  C:/Users/thoma/dev/Scratchy/Sources/Utils/Color.h
+CMakeFiles/Scratchy.dir/Sources/Utils/Position2.cpp.obj
+ C:/Users/thoma/dev/Scratchy/Sources/Utils/Position2.cpp
+ C:/Users/thoma/dev/Scratchy/Sources/Utils/Position2.h
 CMakeFiles/Scratchy.dir/Sources/Utils/Position3.cpp.obj
  C:/Users/thoma/dev/Scratchy/Sources/Utils/Position3.cpp
  C:/Users/thoma/dev/Scratchy/Sources/Utils/Position3.h
@@ -74,6 +79,7 @@ CMakeFiles/Scratchy.dir/Sources/main.cpp.obj
  ../Sources/Mesh/Shader.h
  ../Sources/Mesh/Texture.h
  ../Sources/Utils/Color.h
+ ../Sources/Utils/Position2.h
  ../Sources/Utils/Position3.h
  C:/Users/thoma/.conan/data/glad/0.1.34/_/_/package/01fb4a1dcdf8f1edae8a28c270965dc30981d468/include/KHR/khrplatform.h
  C:/Users/thoma/.conan/data/glad/0.1.34/_/_/package/01fb4a1dcdf8f1edae8a28c270965dc30981d468/include/glad/glad.h

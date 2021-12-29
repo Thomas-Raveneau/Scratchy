@@ -22,23 +22,36 @@ Mesh::~Mesh() {
 
 }
 
-void Mesh::draw() const {
-
-}
-
 void Mesh::drawWireframe(bool active) {
-	if (active) {
+	if (active && drawMode != WIREFRAME) { 				// Set draw mode to wireframed polygon
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-	} else {
-		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+		drawMode = WIREFRAME;
+	} else if (!active && drawMode != FILL) {
+		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);		// Set draw mode to filled polygon
+		drawMode = FILL;
 	}
 }
 
 void Mesh::setTexture(std::string filepath) {
-
+	texture = Texture("filepath");
 }
 
-std::vector<float> Mesh::getVertices() {
+void Mesh::setVertices(std::vector<Position3> vertices) {
+	Mesh::vertices = vertices;
+	int verticesCount = Mesh::vertices.size();
+
+	if (verticesCount == 3) {
+		type = TRIANGLE;
+	} else if (verticesCount == 4) {
+		type = RECTANGLE;
+	}
+}
+
+void Mesh::setTextureCoords(std::vector<Position2> textureCoords) {
+	Mesh::textureCoords = textureCoords;
+}
+
+std::vector<float> Mesh::getVertices() const {
 	std::vector<float> result;
 
 	for (auto & element : vertices) {
@@ -48,7 +61,7 @@ std::vector<float> Mesh::getVertices() {
 	return result;
 }
 
-std::vector<float> Mesh::getColoredVertices() {
+std::vector<float> Mesh::getColoredVertices() const {
 	std::vector<float> result;
 
 	for (auto & element : vertices) {
@@ -58,11 +71,18 @@ std::vector<float> Mesh::getColoredVertices() {
 	return result;
 }
 
-std::vector<float> Mesh::getTexturedVertices() {
+std::vector<float> Mesh::getTexturedVertices() const {
+	if (!isTextured) {
+		return {};
+	}
+
 	std::vector<float> result;
+	int i = 0;
 
 	for (auto & element : vertices) {
-		result.insert(result.end(), {element.getX(), element.getY(), element.getZ(), element.getX(), element.getY()});
+		result.insert(result.end(), {element.getX(), element.getY(), element.getZ(),
+									 textureCoords[i].getX(), textureCoords[i].getY()});
+		i++;
 	}
 
 	return result;

@@ -39,7 +39,7 @@ Texture::~Texture() {
 
 }
 
-void Texture::render() {
-//	glActiveTexture(GL_TEXTURE0);
+void Texture::render() const {
+	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, ID);
 }

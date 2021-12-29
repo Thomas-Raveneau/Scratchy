@@ -70,12 +70,12 @@ clean: CMakeFiles\Scratchy.dir\clean
 CMakeFiles\Scratchy.dir\all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Scratchy.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Scratchy.dir\depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Scratchy.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Scratchy.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\thoma\dev\Scratchy\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13 "Built target Scratchy"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\thoma\dev\Scratchy\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14 "Built target Scratchy"
 .PHONY : CMakeFiles\Scratchy.dir\all
 
 # Build rule for subdir invocation for target.
 CMakeFiles\Scratchy.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\thoma\dev\Scratchy\cmake-build-debug\CMakeFiles 13
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\thoma\dev\Scratchy\cmake-build-debug\CMakeFiles 14
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) CMakeFiles\Scratchy.dir\all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\thoma\dev\Scratchy\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles\Scratchy.dir\rule

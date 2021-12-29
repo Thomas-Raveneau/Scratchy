@@ -24,7 +24,7 @@ namespace Scratchy {
 			~Texture();
 
 		public:
-			void render();
+			void render() const;
 	};
 }
 

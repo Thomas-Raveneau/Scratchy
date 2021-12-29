@@ -18,7 +18,7 @@ namespace Scratchy {
 			~Triangle();
 
 		public:
-			void draw();
+			void draw() const override;
 	};
 }
 

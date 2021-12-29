@@ -39,6 +39,7 @@ set(SOURCES
         ${SRC_DIR}/Utils/Color.cpp          ${SRC_DIR}/Utils/Color.h
         ${SRC_DIR}/Utils/Angle.cpp          ${SRC_DIR}/Utils/Angle.h
         ${SRC_DIR}/Utils/Vector2.cpp        ${SRC_DIR}/Utils/Vector2.h
+        ${SRC_DIR}/Utils/Position2.cpp      ${SRC_DIR}/Utils/Position2.h
         ${SRC_DIR}/Utils/Position3.cpp      ${SRC_DIR}/Utils/Position3.h)
 
 

@@ -17,6 +17,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/thoma/dev/Scratchy/Sources/Mesh/Triangle.cpp" "C:/Users/thoma/dev/Scratchy/cmake-build-debug/CMakeFiles/Scratchy.dir/Sources/Mesh/Triangle.cpp.obj"
   "C:/Users/thoma/dev/Scratchy/Sources/Utils/Angle.cpp" "C:/Users/thoma/dev/Scratchy/cmake-build-debug/CMakeFiles/Scratchy.dir/Sources/Utils/Angle.cpp.obj"
   "C:/Users/thoma/dev/Scratchy/Sources/Utils/Color.cpp" "C:/Users/thoma/dev/Scratchy/cmake-build-debug/CMakeFiles/Scratchy.dir/Sources/Utils/Color.cpp.obj"
+  "C:/Users/thoma/dev/Scratchy/Sources/Utils/Position2.cpp" "C:/Users/thoma/dev/Scratchy/cmake-build-debug/CMakeFiles/Scratchy.dir/Sources/Utils/Position2.cpp.obj"
   "C:/Users/thoma/dev/Scratchy/Sources/Utils/Position3.cpp" "C:/Users/thoma/dev/Scratchy/cmake-build-debug/CMakeFiles/Scratchy.dir/Sources/Utils/Position3.cpp.obj"
   "C:/Users/thoma/dev/Scratchy/Sources/Utils/Vector2.cpp" "C:/Users/thoma/dev/Scratchy/cmake-build-debug/CMakeFiles/Scratchy.dir/Sources/Utils/Vector2.cpp.obj"
   "C:/Users/thoma/dev/Scratchy/Sources/main.cpp" "C:/Users/thoma/dev/Scratchy/cmake-build-debug/CMakeFiles/Scratchy.dir/Sources/main.cpp.obj"

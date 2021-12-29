@@ -144,6 +144,12 @@
 		<Unit filename="C:/Users/thoma/dev/Scratchy/Sources/Utils/Color.h">
 			<Option target="Scratchy"/>
 		</Unit>
+		<Unit filename="C:/Users/thoma/dev/Scratchy/Sources/Utils/Position2.cpp">
+			<Option target="Scratchy"/>
+		</Unit>
+		<Unit filename="C:/Users/thoma/dev/Scratchy/Sources/Utils/Position2.h">
+			<Option target="Scratchy"/>
+		</Unit>
 		<Unit filename="C:/Users/thoma/dev/Scratchy/Sources/Utils/Position3.cpp">
 			<Option target="Scratchy"/>
 		</Unit>

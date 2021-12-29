@@ -22,6 +22,7 @@ CMakeFiles\Scratchy.dir\Sources\Mesh\Mesh.cpp.obj: ..\Libs\stb_image.h
 CMakeFiles\Scratchy.dir\Sources\Mesh\Mesh.cpp.obj: ..\Sources\Mesh\Shader.h
 CMakeFiles\Scratchy.dir\Sources\Mesh\Mesh.cpp.obj: ..\Sources\Mesh\Texture.h
 CMakeFiles\Scratchy.dir\Sources\Mesh\Mesh.cpp.obj: ..\Sources\Utils\Color.h
+CMakeFiles\Scratchy.dir\Sources\Mesh\Mesh.cpp.obj: ..\Sources\Utils\Position2.h
 CMakeFiles\Scratchy.dir\Sources\Mesh\Mesh.cpp.obj: ..\Sources\Utils\Position3.h
 CMakeFiles\Scratchy.dir\Sources\Mesh\Mesh.cpp.obj: C:\Users\thoma\.conan\data\glad\0.1.34\_\_\package\01fb4a1dcdf8f1edae8a28c270965dc30981d468\include\KHR\khrplatform.h
 CMakeFiles\Scratchy.dir\Sources\Mesh\Mesh.cpp.obj: C:\Users\thoma\.conan\data\glad\0.1.34\_\_\package\01fb4a1dcdf8f1edae8a28c270965dc30981d468\include\glad\glad.h
@@ -47,6 +48,7 @@ CMakeFiles\Scratchy.dir\Sources\Mesh\Triangle.cpp.obj: ..\Sources\Mesh\Mesh.h
 CMakeFiles\Scratchy.dir\Sources\Mesh\Triangle.cpp.obj: ..\Sources\Mesh\Shader.h
 CMakeFiles\Scratchy.dir\Sources\Mesh\Triangle.cpp.obj: ..\Sources\Mesh\Texture.h
 CMakeFiles\Scratchy.dir\Sources\Mesh\Triangle.cpp.obj: ..\Sources\Utils\Color.h
+CMakeFiles\Scratchy.dir\Sources\Mesh\Triangle.cpp.obj: ..\Sources\Utils\Position2.h
 CMakeFiles\Scratchy.dir\Sources\Mesh\Triangle.cpp.obj: ..\Sources\Utils\Position3.h
 CMakeFiles\Scratchy.dir\Sources\Mesh\Triangle.cpp.obj: C:\Users\thoma\.conan\data\glad\0.1.34\_\_\package\01fb4a1dcdf8f1edae8a28c270965dc30981d468\include\KHR\khrplatform.h
 CMakeFiles\Scratchy.dir\Sources\Mesh\Triangle.cpp.obj: C:\Users\thoma\.conan\data\glad\0.1.34\_\_\package\01fb4a1dcdf8f1edae8a28c270965dc30981d468\include\glad\glad.h
@@ -59,6 +61,9 @@ CMakeFiles\Scratchy.dir\Sources\Utils\Angle.cpp.obj: ..\Sources\Utils\Angle.h
 
 CMakeFiles\Scratchy.dir\Sources\Utils\Color.cpp.obj: ..\Sources\Utils\Color.cpp
 CMakeFiles\Scratchy.dir\Sources\Utils\Color.cpp.obj: ..\Sources\Utils\Color.h
+
+CMakeFiles\Scratchy.dir\Sources\Utils\Position2.cpp.obj: ..\Sources\Utils\Position2.cpp
+CMakeFiles\Scratchy.dir\Sources\Utils\Position2.cpp.obj: ..\Sources\Utils\Position2.h
 
 CMakeFiles\Scratchy.dir\Sources\Utils\Position3.cpp.obj: ..\Sources\Utils\Position3.cpp
 CMakeFiles\Scratchy.dir\Sources\Utils\Position3.cpp.obj: ..\Sources\Utils\Position3.h
@@ -73,6 +78,7 @@ CMakeFiles\Scratchy.dir\Sources\main.cpp.obj: ..\Sources\Mesh\Mesh.h
 CMakeFiles\Scratchy.dir\Sources\main.cpp.obj: ..\Sources\Mesh\Shader.h
 CMakeFiles\Scratchy.dir\Sources\main.cpp.obj: ..\Sources\Mesh\Texture.h
 CMakeFiles\Scratchy.dir\Sources\main.cpp.obj: ..\Sources\Utils\Color.h
+CMakeFiles\Scratchy.dir\Sources\main.cpp.obj: ..\Sources\Utils\Position2.h
 CMakeFiles\Scratchy.dir\Sources\main.cpp.obj: ..\Sources\Utils\Position3.h
 CMakeFiles\Scratchy.dir\Sources\main.cpp.obj: C:\Users\thoma\.conan\data\glad\0.1.34\_\_\package\01fb4a1dcdf8f1edae8a28c270965dc30981d468\include\KHR\khrplatform.h
 CMakeFiles\Scratchy.dir\Sources\main.cpp.obj: C:\Users\thoma\.conan\data\glad\0.1.34\_\_\package\01fb4a1dcdf8f1edae8a28c270965dc30981d468\include\glad\glad.h

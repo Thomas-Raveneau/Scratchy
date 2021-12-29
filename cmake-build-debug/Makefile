@@ -334,6 +334,30 @@ Sources\Utils\Color.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Scratchy.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Scratchy.dir\Sources\Utils\Color.cpp.s
 .PHONY : Sources\Utils\Color.cpp.s
 
+Sources\Utils\Position2.obj: Sources\Utils\Position2.cpp.obj
+.PHONY : Sources\Utils\Position2.obj
+
+# target to build an object file
+Sources\Utils\Position2.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Scratchy.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Scratchy.dir\Sources\Utils\Position2.cpp.obj
+.PHONY : Sources\Utils\Position2.cpp.obj
+
+Sources\Utils\Position2.i: Sources\Utils\Position2.cpp.i
+.PHONY : Sources\Utils\Position2.i
+
+# target to preprocess a source file
+Sources\Utils\Position2.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Scratchy.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Scratchy.dir\Sources\Utils\Position2.cpp.i
+.PHONY : Sources\Utils\Position2.cpp.i
+
+Sources\Utils\Position2.s: Sources\Utils\Position2.cpp.s
+.PHONY : Sources\Utils\Position2.s
+
+# target to generate assembly for a file
+Sources\Utils\Position2.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Scratchy.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Scratchy.dir\Sources\Utils\Position2.cpp.s
+.PHONY : Sources\Utils\Position2.cpp.s
+
 Sources\Utils\Position3.obj: Sources\Utils\Position3.cpp.obj
 .PHONY : Sources\Utils\Position3.obj
 
@@ -442,6 +466,9 @@ help:
 	@echo ... Sources/Utils/Color.obj
 	@echo ... Sources/Utils/Color.i
 	@echo ... Sources/Utils/Color.s
+	@echo ... Sources/Utils/Position2.obj
+	@echo ... Sources/Utils/Position2.i
+	@echo ... Sources/Utils/Position2.s
 	@echo ... Sources/Utils/Position3.obj
 	@echo ... Sources/Utils/Position3.i
 	@echo ... Sources/Utils/Position3.s

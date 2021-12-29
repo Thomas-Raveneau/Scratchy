@@ -9,9 +9,9 @@
 #include <Mesh/Shader.h>
 #include <Mesh/Texture.h>
 
+#include <Utils/Position2.h>
 #include <Utils/Position3.h>
 #include <Utils/Color.h>
-
 
 #include <vector>
 
@@ -24,6 +24,11 @@ namespace Scratchy {
 				WIREFRAME
 			};
 
+			enum TYPE {
+				TRIANGLE,
+				RECTANGLE
+			};
+
 		protected:
 			unsigned int VBO;
 			unsigned int VAO;
@@ -33,8 +38,10 @@ namespace Scratchy {
 			Shader shader;
 			Texture texture;
 
+			TYPE type;
 			DRAW_MODE drawMode = FILL;
 			std::vector<Position3> vertices;
+			std::vector<Position2> textureCoords;
 
 			bool isTextured;
 
@@ -47,13 +54,16 @@ namespace Scratchy {
 			void drawWireframe(bool active);
 
 		public:
-			virtual void draw() const;
-			virtual void setTexture(std::string filepath);
+			virtual void draw() const {};
 
 		public:
-			std::vector<float> getVertices();
-			std::vector<float> getColoredVertices();
-			std::vector<float> getTexturedVertices();
+			void setTexture(std::string filepath);
+			void setVertices(std::vector<Position3> vertices);
+			void setTextureCoords(std::vector<Position2> textureCoords);
+
+			std::vector<float> getVertices() const;
+			std::vector<float> getColoredVertices() const;
+			std::vector<float> getTexturedVertices() const;
 	};
 }
 

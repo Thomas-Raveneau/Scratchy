@@ -32,9 +32,9 @@ float Position3::getZ() const {
 }
 
 float *Position3::getArray() const {
-	float array[] = {getX(), getY(), getZ()};
+	float result[] = {getX(), getY(), getZ()};
 
-	return array;
+	return result;
 }
 
 void Position3::operator=(const Position3 &p) {
