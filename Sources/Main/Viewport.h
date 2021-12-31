@@ -9,6 +9,8 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
+#include <utility>
+
 namespace Scratchy {
 
 	class Viewport {
@@ -19,8 +21,7 @@ namespace Scratchy {
 			};
 
 		private:
-			int width;
-			int height;
+			std::pair<int, int> size;
 			MODE mode = WINDOWED;
 
 		protected:

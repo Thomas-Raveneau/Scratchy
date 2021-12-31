@@ -26,21 +26,23 @@ set(SRC_DIR "Sources/")
 set(SOURCES
         ${SRC_DIR}/main.cpp
 
-        ${SRC_DIR}/Main/Viewport.cpp        ${SRC_DIR}/Main/Viewport.h
-        ${SRC_DIR}/Main/Window.cpp          ${SRC_DIR}/Main/Window.h
+        ${SRC_DIR}/Main/Viewport.cpp                    ${SRC_DIR}/Main/Viewport.h
+        ${SRC_DIR}/Main/Window.cpp                      ${SRC_DIR}/Main/Window.h
 
-        ${SRC_DIR}/Mesh/Mesh.cpp            ${SRC_DIR}/Mesh/Mesh.h
-        ${SRC_DIR}/Mesh/Shader.cpp          ${SRC_DIR}/Mesh/Shader.h
-        ${SRC_DIR}/Mesh/Texture.cpp         ${SRC_DIR}/Mesh/Texture.h
+        ${SRC_DIR}/Mesh/IMesh.h
+        ${SRC_DIR}/Mesh/Mesh.cpp                        ${SRC_DIR}/Mesh/Mesh.h
+        ${SRC_DIR}/Mesh/Shader.cpp                      ${SRC_DIR}/Mesh/Shader.h
+        ${SRC_DIR}/Mesh/Texture.cpp                     ${SRC_DIR}/Mesh/Texture.h
 
-        ${SRC_DIR}/Mesh/Triangle.cpp        ${SRC_DIR}/Mesh/Triangle.h
-        ${SRC_DIR}/Mesh/Rect.cpp          ${SRC_DIR}/Mesh/Rect.h
+        ${SRC_DIR}/Mesh/Primitives/Rect.cpp             ${SRC_DIR}/Mesh/Primitives/Rect.h
+        ${SRC_DIR}/Mesh/Primitives/Cube.cpp             ${SRC_DIR}/Mesh/Primitives/Cube.h
+        ${SRC_DIR}/Mesh/Primitives/Triangle.cpp         ${SRC_DIR}/Mesh/Primitives/Triangle.h
 
-        ${SRC_DIR}/Utils/Color.cpp          ${SRC_DIR}/Utils/Color.h
-        ${SRC_DIR}/Utils/Angle.cpp          ${SRC_DIR}/Utils/Angle.h
-        ${SRC_DIR}/Utils/Vector2.cpp        ${SRC_DIR}/Utils/Vector2.h
-        ${SRC_DIR}/Utils/Position2.cpp      ${SRC_DIR}/Utils/Position2.h
-        ${SRC_DIR}/Utils/Position3.cpp      ${SRC_DIR}/Utils/Position3.h)
+        ${SRC_DIR}/Utils/Color.cpp                      ${SRC_DIR}/Utils/Color.h
+        ${SRC_DIR}/Utils/Angle.cpp                      ${SRC_DIR}/Utils/Angle.h
+        ${SRC_DIR}/Utils/Vector2.cpp                    ${SRC_DIR}/Utils/Vector2.h
+        ${SRC_DIR}/Utils/Position2.cpp                  ${SRC_DIR}/Utils/Position2.h
+        ${SRC_DIR}/Utils/Position3.cpp                  ${SRC_DIR}/Utils/Position3.h)
 
 
 # Adding the executable
@@ -69,4 +71,5 @@ find_package(glfw3 3.3 REQUIRED)
 # Finding GLAD in the system using conan's paths
 find_package(glad REQUIRED)
 
+# Linking libraries to the project
 target_link_libraries(${PROJECT_NAME} PUBLIC glfw OpenGL::GL glad::glad)

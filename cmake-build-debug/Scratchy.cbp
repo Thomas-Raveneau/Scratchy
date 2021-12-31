@@ -108,16 +108,31 @@
 		<Unit filename="C:/Users/thoma/dev/Scratchy/Sources/Main/Window.h">
 			<Option target="Scratchy"/>
 		</Unit>
+		<Unit filename="C:/Users/thoma/dev/Scratchy/Sources/Mesh/IMesh.h">
+			<Option target="Scratchy"/>
+		</Unit>
 		<Unit filename="C:/Users/thoma/dev/Scratchy/Sources/Mesh/Mesh.cpp">
 			<Option target="Scratchy"/>
 		</Unit>
 		<Unit filename="C:/Users/thoma/dev/Scratchy/Sources/Mesh/Mesh.h">
 			<Option target="Scratchy"/>
 		</Unit>
-		<Unit filename="C:/Users/thoma/dev/Scratchy/Sources/Mesh/Rect.cpp">
+		<Unit filename="C:/Users/thoma/dev/Scratchy/Sources/Mesh/Primitives/Cube.cpp">
 			<Option target="Scratchy"/>
 		</Unit>
-		<Unit filename="C:/Users/thoma/dev/Scratchy/Sources/Mesh/Rect.h">
+		<Unit filename="C:/Users/thoma/dev/Scratchy/Sources/Mesh/Primitives/Cube.h">
+			<Option target="Scratchy"/>
+		</Unit>
+		<Unit filename="C:/Users/thoma/dev/Scratchy/Sources/Mesh/Primitives/Rect.cpp">
+			<Option target="Scratchy"/>
+		</Unit>
+		<Unit filename="C:/Users/thoma/dev/Scratchy/Sources/Mesh/Primitives/Rect.h">
+			<Option target="Scratchy"/>
+		</Unit>
+		<Unit filename="C:/Users/thoma/dev/Scratchy/Sources/Mesh/Primitives/Triangle.cpp">
+			<Option target="Scratchy"/>
+		</Unit>
+		<Unit filename="C:/Users/thoma/dev/Scratchy/Sources/Mesh/Primitives/Triangle.h">
 			<Option target="Scratchy"/>
 		</Unit>
 		<Unit filename="C:/Users/thoma/dev/Scratchy/Sources/Mesh/Shader.cpp">
@@ -130,12 +145,6 @@
 			<Option target="Scratchy"/>
 		</Unit>
 		<Unit filename="C:/Users/thoma/dev/Scratchy/Sources/Mesh/Texture.h">
-			<Option target="Scratchy"/>
-		</Unit>
-		<Unit filename="C:/Users/thoma/dev/Scratchy/Sources/Mesh/Triangle.cpp">
-			<Option target="Scratchy"/>
-		</Unit>
-		<Unit filename="C:/Users/thoma/dev/Scratchy/Sources/Mesh/Triangle.h">
 			<Option target="Scratchy"/>
 		</Unit>
 		<Unit filename="C:/Users/thoma/dev/Scratchy/Sources/Utils/Angle.cpp">

@@ -8,19 +8,17 @@
 using namespace Scratchy;
 using namespace std;
 
-Mesh::Mesh(std::string vertexShaderPath, std::string fragmentShaderPath):
-shader(vertexShaderPath, fragmentShaderPath) {
+Mesh::Mesh(std::string vertexShaderPath, std::string fragmentShaderPath) {
+	shader.setShaders(vertexShaderPath, fragmentShaderPath);
 	setIsTextured(false);
+	setTransform(glm::mat4(1.0f));
 }
 
-Mesh::Mesh(std::string vertexShaderPath, std::string fragmentShaderPath, std::string texturePath):
-		shader(vertexShaderPath, fragmentShaderPath),
-		texture(texturePath) {
+Mesh::Mesh(std::string vertexShaderPath, std::string fragmentShaderPath, std::string texturePath) {
+	shader.setShaders(vertexShaderPath, fragmentShaderPath);
+	setTexture(texturePath);
 	setIsTextured(true);
-}
-
-Mesh::~Mesh() {
-
+	setTransform(glm::mat4(1.0f));
 }
 
 void Mesh::drawWireframe(bool active) {
@@ -33,40 +31,31 @@ void Mesh::drawWireframe(bool active) {
 	}
 }
 
-void Mesh::setColor(Color color) {
+const vector<Position3> &Mesh::getVertices() const {
+	return vertices;
+}
+
+void Mesh::setVertices(const vector<Position3> &vertices) {
+	Mesh::vertices = vertices;
+}
+
+void Mesh::setColor(Color &color) {
 	Mesh::color = color;
 }
 
-void Mesh::setTexture(std::string filepath) {
+void Mesh::setTexture(std::string &filepath) {
 	Mesh::texture = Texture(filepath);
 }
 
-void Mesh::setVertices(std::vector<Position3> vertices) {
-	Mesh::vertices = vertices;
-	int verticesCount = Mesh::vertices.size();
-
-	if (verticesCount == 3) {
-		type = TRIANGLE;
-	} else if (verticesCount == 4) {
-		type = RECTANGLE;
-	}
-}
-
-void Mesh::setTextureCoords(std::vector<Position2> textureCoords) {
+void Mesh::setTextureCoords(std::vector<Position2> &textureCoords) {
 	Mesh::textureCoords = textureCoords;
 }
 
-std::vector<float> Mesh::getVertices() const {
-	std::vector<float> result;
-
-	for (auto & element : vertices) {
-		result.insert(result.end(), {element.getX(), element.getY(), element.getZ()});
+std::vector<float> Mesh::getColoredVertices() const {
+	if (isTextured) {
+		return {};
 	}
 
-	return result;
-}
-
-std::vector<float> Mesh::getColoredVertices() const {
 	std::vector<float> result;
 
 	for (auto & element : vertices) {
@@ -82,6 +71,7 @@ std::vector<float> Mesh::getTexturedVertices() const {
 	}
 
 	std::vector<float> result;
+
 	int i = 0;
 
 	for (auto & element : vertices) {
@@ -99,4 +89,12 @@ bool Mesh::getIsTextured() const {
 
 void Mesh::setIsTextured(bool isTextured) {
 	Mesh::isTextured = isTextured;
+}
+
+const glm::mat4 &Mesh::getTransform() const {
+	return transform;
+}
+
+void Mesh::setTransform(const glm::mat4 &transform) {
+	Mesh::transform = transform;
 }

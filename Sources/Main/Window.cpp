@@ -80,7 +80,7 @@ void Window::resize(GLFWwindow *window, int width, int height) {
 	glViewport(0, 0, width, height);
 	handler->setSize(width, height);
 
-	std::cout << "DEBUG: Window->resize()" << std::endl;
+	std::cout << "DEBUG: Window->resize(" << width << ", " << height << ")" << std::endl;
 }
 
 const std::string &Window::getTitle() const {
@@ -97,4 +97,16 @@ const Color &Window::getClearColor() const {
 
 void Window::setClearColor(Color clearColor) {
 	Window::clearColor = clearColor;
+}
+
+void Window::addMesh(Mesh &mesh) {
+	meshes.push_back(&mesh);
+}
+
+void Window::drawMeshes() {
+	if (getWidth() > 0) {
+		for (Mesh *mesh: meshes) {
+			mesh->draw(getWidth(), getHeight());
+		}
+	}
 }

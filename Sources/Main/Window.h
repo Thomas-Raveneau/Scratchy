@@ -6,10 +6,14 @@
 #ifndef SCRATCHY_WINDOW_H
 #define SCRATCHY_WINDOW_H
 
-#include <iostream>
 
 #include <Main/Viewport.h>
 #include <Utils/Color.h>
+#include <Mesh/Mesh.h>
+#include <Mesh/Primitives/Rect.h>
+
+#include <iostream>
+#include <vector>
 
 namespace Scratchy {
 
@@ -25,6 +29,8 @@ namespace Scratchy {
 			std::string title;
 			STATE state;
 			Color clearColor;
+
+			std::vector<Mesh *> meshes;
 
 		public:
 			Window(int width, int height, const std::string &title);
@@ -50,6 +56,10 @@ namespace Scratchy {
 
 			const Color &getClearColor() const;
 			void setClearColor(Color clearColor);
+
+			void addMesh(Mesh &mesh);
+
+			void drawMeshes();
 	};
 }
 

@@ -3,12 +3,10 @@
 // File: main.cpp
 //
 
-//#include <stb_image.h>
-//
 #include <iostream>
 
-#include "Mesh/Triangle.h"
-#include "Mesh/Rect.h"
+#include "Mesh/Primitives/Triangle.h"
+#include "Mesh/Primitives/Rect.h"
 #include "Main/Window.h"
 
 using namespace std;
@@ -31,12 +29,14 @@ int main() {
 	std::string texturePath = "../Ressources/Textures/mc_texture.jpg";
 	Scratchy::Color rectColor(64, 0, 0);
 
-	Scratchy::Rect rect(a1, a2, a3, a4, texturePath);
+	Scratchy::Rect rect = Scratchy::Rect(a1, a2, a3, a4, texturePath);
+
+	window->addMesh(rect);
 
 	while (window->isOpen()) {
 		window->clear();
 
-		rect.draw();
+		window->drawMeshes();
 
 		window->swapBuffer();
 		window->pollEvents();

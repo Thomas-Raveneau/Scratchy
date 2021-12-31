@@ -16,19 +16,19 @@ Viewport::~Viewport() {
 }
 
 int Viewport::getWidth() const {
-	return width;
+	return size.first;
 }
 
 void Viewport::setWidth(int width) {
-	Viewport::width = width;
+	size.first = width;
 }
 
 int Viewport::getHeight() const {
-	return height;
+	return size.second;
 }
 
 void Viewport::setHeight(int height) {
-	Viewport::height = height;
+	size.second = height;
 }
 
 void Viewport::setSize(int width, int height) {

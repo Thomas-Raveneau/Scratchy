@@ -6,69 +6,36 @@
 #ifndef SCRATCHY_MESH_H
 #define SCRATCHY_MESH_H
 
-#include <Mesh/Shader.h>
-#include <Mesh/Texture.h>
-
-#include <Utils/Position2.h>
-#include <Utils/Position3.h>
-#include <Utils/Color.h>
-
-#include <vector>
+#include <Mesh/IMesh.h>
 
 namespace Scratchy {
 
-	class Mesh {
-		private:
-			enum DRAW_MODE {
-				FILL,
-				WIREFRAME
-			};
-
-			enum TYPE {
-				TRIANGLE,
-				RECTANGLE
-			};
-
-		protected:
-			unsigned int VBO;
-			unsigned int VAO;
-			unsigned int EBO;
-
-			Color color;
-			Shader shader;
-			Texture texture;
-
-			TYPE type;
-			DRAW_MODE drawMode = FILL;
-			std::vector<Position3> vertices;
-			std::vector<Position2> textureCoords;
-
-			bool isTextured;
+	class Mesh: virtual public IMesh {
 
 		public:
 			Mesh(std::string vertexShaderPath, std::string fragmentShaderPath);
 			Mesh(std::string vertexShaderPath, std::string fragmentShaderPath, std::string texturePath);
-			~Mesh();
+			~Mesh() = default;
+
+		public :
+			void drawWireframe(bool active) final;
 
 		public:
-			void drawWireframe(bool active);
+			const std::vector<Position3> &getVertices() const final;
+			void setVertices(const std::vector<Position3> &vertices) final;
 
-		public:
-			virtual void draw() const {};
+			std::vector<float> getColoredVertices() const final;
+			void setColor(Color &color) final;
 
-		public:
-			std::vector<float> getVertices() const;
-			void setVertices(std::vector<Position3> vertices);
+			std::vector<float> getTexturedVertices() const final;
+			void setTexture(std::string &filepath) final;
+			void setTextureCoords(std::vector<Position2> &textureCoords) final;
 
-			std::vector<float> getColoredVertices() const;
-			void setColor(Color color);
+			bool getIsTextured() const final;
+			void setIsTextured(bool isTextured) final;
 
-			std::vector<float> getTexturedVertices() const;
-			void setTexture(std::string filepath);
-			void setTextureCoords(std::vector<Position2> textureCoords);
-
-			bool getIsTextured() const;
-			void setIsTextured(bool isTextured);
+			const glm::mat4 &getTransform() const final;
+			void setTransform(const glm::mat4 &transform) final;
 	};
 }
 

@@ -214,29 +214,77 @@ Sources\Mesh\Mesh.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Scratchy.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Scratchy.dir\Sources\Mesh\Mesh.cpp.s
 .PHONY : Sources\Mesh\Mesh.cpp.s
 
-Sources\Mesh\Rect.obj: Sources\Mesh\Rect.cpp.obj
-.PHONY : Sources\Mesh\Rect.obj
+Sources\Mesh\Primitives\Cube.obj: Sources\Mesh\Primitives\Cube.cpp.obj
+.PHONY : Sources\Mesh\Primitives\Cube.obj
 
 # target to build an object file
-Sources\Mesh\Rect.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Scratchy.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Scratchy.dir\Sources\Mesh\Rect.cpp.obj
-.PHONY : Sources\Mesh\Rect.cpp.obj
+Sources\Mesh\Primitives\Cube.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Scratchy.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Scratchy.dir\Sources\Mesh\Primitives\Cube.cpp.obj
+.PHONY : Sources\Mesh\Primitives\Cube.cpp.obj
 
-Sources\Mesh\Rect.i: Sources\Mesh\Rect.cpp.i
-.PHONY : Sources\Mesh\Rect.i
+Sources\Mesh\Primitives\Cube.i: Sources\Mesh\Primitives\Cube.cpp.i
+.PHONY : Sources\Mesh\Primitives\Cube.i
 
 # target to preprocess a source file
-Sources\Mesh\Rect.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Scratchy.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Scratchy.dir\Sources\Mesh\Rect.cpp.i
-.PHONY : Sources\Mesh\Rect.cpp.i
+Sources\Mesh\Primitives\Cube.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Scratchy.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Scratchy.dir\Sources\Mesh\Primitives\Cube.cpp.i
+.PHONY : Sources\Mesh\Primitives\Cube.cpp.i
 
-Sources\Mesh\Rect.s: Sources\Mesh\Rect.cpp.s
-.PHONY : Sources\Mesh\Rect.s
+Sources\Mesh\Primitives\Cube.s: Sources\Mesh\Primitives\Cube.cpp.s
+.PHONY : Sources\Mesh\Primitives\Cube.s
 
 # target to generate assembly for a file
-Sources\Mesh\Rect.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Scratchy.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Scratchy.dir\Sources\Mesh\Rect.cpp.s
-.PHONY : Sources\Mesh\Rect.cpp.s
+Sources\Mesh\Primitives\Cube.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Scratchy.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Scratchy.dir\Sources\Mesh\Primitives\Cube.cpp.s
+.PHONY : Sources\Mesh\Primitives\Cube.cpp.s
+
+Sources\Mesh\Primitives\Rect.obj: Sources\Mesh\Primitives\Rect.cpp.obj
+.PHONY : Sources\Mesh\Primitives\Rect.obj
+
+# target to build an object file
+Sources\Mesh\Primitives\Rect.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Scratchy.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Scratchy.dir\Sources\Mesh\Primitives\Rect.cpp.obj
+.PHONY : Sources\Mesh\Primitives\Rect.cpp.obj
+
+Sources\Mesh\Primitives\Rect.i: Sources\Mesh\Primitives\Rect.cpp.i
+.PHONY : Sources\Mesh\Primitives\Rect.i
+
+# target to preprocess a source file
+Sources\Mesh\Primitives\Rect.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Scratchy.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Scratchy.dir\Sources\Mesh\Primitives\Rect.cpp.i
+.PHONY : Sources\Mesh\Primitives\Rect.cpp.i
+
+Sources\Mesh\Primitives\Rect.s: Sources\Mesh\Primitives\Rect.cpp.s
+.PHONY : Sources\Mesh\Primitives\Rect.s
+
+# target to generate assembly for a file
+Sources\Mesh\Primitives\Rect.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Scratchy.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Scratchy.dir\Sources\Mesh\Primitives\Rect.cpp.s
+.PHONY : Sources\Mesh\Primitives\Rect.cpp.s
+
+Sources\Mesh\Primitives\Triangle.obj: Sources\Mesh\Primitives\Triangle.cpp.obj
+.PHONY : Sources\Mesh\Primitives\Triangle.obj
+
+# target to build an object file
+Sources\Mesh\Primitives\Triangle.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Scratchy.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Scratchy.dir\Sources\Mesh\Primitives\Triangle.cpp.obj
+.PHONY : Sources\Mesh\Primitives\Triangle.cpp.obj
+
+Sources\Mesh\Primitives\Triangle.i: Sources\Mesh\Primitives\Triangle.cpp.i
+.PHONY : Sources\Mesh\Primitives\Triangle.i
+
+# target to preprocess a source file
+Sources\Mesh\Primitives\Triangle.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Scratchy.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Scratchy.dir\Sources\Mesh\Primitives\Triangle.cpp.i
+.PHONY : Sources\Mesh\Primitives\Triangle.cpp.i
+
+Sources\Mesh\Primitives\Triangle.s: Sources\Mesh\Primitives\Triangle.cpp.s
+.PHONY : Sources\Mesh\Primitives\Triangle.s
+
+# target to generate assembly for a file
+Sources\Mesh\Primitives\Triangle.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Scratchy.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Scratchy.dir\Sources\Mesh\Primitives\Triangle.cpp.s
+.PHONY : Sources\Mesh\Primitives\Triangle.cpp.s
 
 Sources\Mesh\Shader.obj: Sources\Mesh\Shader.cpp.obj
 .PHONY : Sources\Mesh\Shader.obj
@@ -285,30 +333,6 @@ Sources\Mesh\Texture.s: Sources\Mesh\Texture.cpp.s
 Sources\Mesh\Texture.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Scratchy.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Scratchy.dir\Sources\Mesh\Texture.cpp.s
 .PHONY : Sources\Mesh\Texture.cpp.s
-
-Sources\Mesh\Triangle.obj: Sources\Mesh\Triangle.cpp.obj
-.PHONY : Sources\Mesh\Triangle.obj
-
-# target to build an object file
-Sources\Mesh\Triangle.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Scratchy.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Scratchy.dir\Sources\Mesh\Triangle.cpp.obj
-.PHONY : Sources\Mesh\Triangle.cpp.obj
-
-Sources\Mesh\Triangle.i: Sources\Mesh\Triangle.cpp.i
-.PHONY : Sources\Mesh\Triangle.i
-
-# target to preprocess a source file
-Sources\Mesh\Triangle.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Scratchy.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Scratchy.dir\Sources\Mesh\Triangle.cpp.i
-.PHONY : Sources\Mesh\Triangle.cpp.i
-
-Sources\Mesh\Triangle.s: Sources\Mesh\Triangle.cpp.s
-.PHONY : Sources\Mesh\Triangle.s
-
-# target to generate assembly for a file
-Sources\Mesh\Triangle.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Scratchy.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Scratchy.dir\Sources\Mesh\Triangle.cpp.s
-.PHONY : Sources\Mesh\Triangle.cpp.s
 
 Sources\Utils\Angle.obj: Sources\Utils\Angle.cpp.obj
 .PHONY : Sources\Utils\Angle.obj
@@ -475,18 +499,21 @@ help:
 	@echo ... Sources/Mesh/Mesh.obj
 	@echo ... Sources/Mesh/Mesh.i
 	@echo ... Sources/Mesh/Mesh.s
-	@echo ... Sources/Mesh/Rect.obj
-	@echo ... Sources/Mesh/Rect.i
-	@echo ... Sources/Mesh/Rect.s
+	@echo ... Sources/Mesh/Primitives/Cube.obj
+	@echo ... Sources/Mesh/Primitives/Cube.i
+	@echo ... Sources/Mesh/Primitives/Cube.s
+	@echo ... Sources/Mesh/Primitives/Rect.obj
+	@echo ... Sources/Mesh/Primitives/Rect.i
+	@echo ... Sources/Mesh/Primitives/Rect.s
+	@echo ... Sources/Mesh/Primitives/Triangle.obj
+	@echo ... Sources/Mesh/Primitives/Triangle.i
+	@echo ... Sources/Mesh/Primitives/Triangle.s
 	@echo ... Sources/Mesh/Shader.obj
 	@echo ... Sources/Mesh/Shader.i
 	@echo ... Sources/Mesh/Shader.s
 	@echo ... Sources/Mesh/Texture.obj
 	@echo ... Sources/Mesh/Texture.i
 	@echo ... Sources/Mesh/Texture.s
-	@echo ... Sources/Mesh/Triangle.obj
-	@echo ... Sources/Mesh/Triangle.i
-	@echo ... Sources/Mesh/Triangle.s
 	@echo ... Sources/Utils/Angle.obj
 	@echo ... Sources/Utils/Angle.i
 	@echo ... Sources/Utils/Angle.s
