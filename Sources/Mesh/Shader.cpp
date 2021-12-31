@@ -12,7 +12,9 @@ Shader::Shader(std::string vertexPath, std::string fragmentPath) {
 }
 
 Shader::~Shader() {
-	glDeleteProgram(ID);
+	if (glIsProgram(ID)) {
+		glDeleteProgram(ID);
+	}
 }
 
 void Shader::setShaders(std::string vertexPath, std::string fragmentPath) {

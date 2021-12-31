@@ -7,6 +7,7 @@
 
 #include "Mesh/Primitives/Triangle.h"
 #include "Mesh/Primitives/Rect.h"
+#include "Mesh/Primitives/Cube.h"
 #include "Main/Window.h"
 
 using namespace std;
@@ -22,20 +23,24 @@ int main() {
 
 	window->init(clearColor);
 
-	Scratchy::Position3 a1(-0.5, 0.5, 0);
-	Scratchy::Position3 a2(0.5, 0.5, 0);
-	Scratchy::Position3 a3(0.5, -0.5, 0);
-	Scratchy::Position3 a4(-0.5, -0.5, 0);
+//	Scratchy::Position3 a1(-0.5, 0.5, 0);
+//	Scratchy::Position3 a2(0.5, 0.5, 0);
+//	Scratchy::Position3 a3(0.5, -0.5, 0);
+//	Scratchy::Position3 a4(-0.5, -0.5, 0);
 	std::string texturePath = "../Ressources/Textures/mc_texture.jpg";
-	Scratchy::Color rectColor(64, 0, 0);
+//	Scratchy::Color rectColor(64, 0, 0);
+//
+//	Scratchy::Rect rect = Scratchy::Rect(a1, a2, a3, a4, texturePath);
+	Scratchy::Cube cube = Scratchy::Cube(Position3(0, 0, 0), 0.5, texturePath);
 
-	Scratchy::Rect rect = Scratchy::Rect(a1, a2, a3, a4, texturePath);
+//	cube.drawWireframe(true);
 
-	window->addMesh(rect);
+	window->addMesh(cube);
 
 	while (window->isOpen()) {
 		window->clear();
 
+		cube.rotate();
 		window->drawMeshes();
 
 		window->swapBuffer();

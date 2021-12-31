@@ -13,12 +13,15 @@ namespace Scratchy {
 	class Mesh: virtual public IMesh {
 
 		public:
+			Mesh() = default;
 			Mesh(std::string vertexShaderPath, std::string fragmentShaderPath);
 			Mesh(std::string vertexShaderPath, std::string fragmentShaderPath, std::string texturePath);
 			~Mesh() = default;
 
 		public :
 			void drawWireframe(bool active) final;
+
+			void rotate() final;
 
 		public:
 			const std::vector<Position3> &getVertices() const final;
@@ -29,7 +32,7 @@ namespace Scratchy {
 
 			std::vector<float> getTexturedVertices() const final;
 			void setTexture(std::string &filepath) final;
-			void setTextureCoords(std::vector<Position2> &textureCoords) final;
+			void setTextureCoords(const std::vector<Position2> &textureCoords) final;
 
 			bool getIsTextured() const final;
 			void setIsTextured(bool isTextured) final;

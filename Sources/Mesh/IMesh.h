@@ -14,6 +14,7 @@
 #include <Utils/Color.h>
 
 #include <vector>
+#include <memory>
 
 namespace Scratchy {
 
@@ -35,7 +36,7 @@ namespace Scratchy {
 			unsigned int EBO;
 
 			Color color;
-			Shader shader;
+			std::unique_ptr<Shader> shader;
 			Texture texture;
 
 			TYPE type;
@@ -55,6 +56,8 @@ namespace Scratchy {
 			virtual void draw(int windowWith, int windowHeight) const = 0;
 			virtual void drawWireframe(bool active) = 0;
 
+			virtual void rotate() = 0;
+
 		public:
 			virtual const std::vector<Position3> &getVertices() const = 0;
 			virtual void setVertices(const std::vector<Position3> &vertices) = 0;
@@ -64,7 +67,7 @@ namespace Scratchy {
 
 			virtual std::vector<float> getTexturedVertices() const = 0;
 			virtual void setTexture(std::string &filepath) = 0;
-			virtual void setTextureCoords(std::vector<Position2> &textureCoords) = 0;
+			virtual void setTextureCoords(const std::vector<Position2> &textureCoords) = 0;
 
 			virtual bool getIsTextured() const = 0;
 			virtual void setIsTextured(bool isTextured) = 0;

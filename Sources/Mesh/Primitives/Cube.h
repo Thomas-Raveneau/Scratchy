@@ -9,9 +9,14 @@
 #include <Mesh/Mesh.h>
 #include <Mesh/Primitives/Rect.h>
 
+#include <vector>
+
 namespace Scratchy {
 
 	class Cube: public Mesh {
+
+		private:
+			std::vector<Rect *> faces;
 
 		public:
 			Cube(Position3 position, float size, Color color);

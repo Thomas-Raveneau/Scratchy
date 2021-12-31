@@ -9,13 +9,14 @@ using namespace Scratchy;
 using namespace std;
 
 Mesh::Mesh(std::string vertexShaderPath, std::string fragmentShaderPath) {
-	shader.setShaders(vertexShaderPath, fragmentShaderPath);
+	shader = std::unique_ptr<Shader>(new Shader(vertexShaderPath, fragmentShaderPath));
 	setIsTextured(false);
 	setTransform(glm::mat4(1.0f));
 }
 
 Mesh::Mesh(std::string vertexShaderPath, std::string fragmentShaderPath, std::string texturePath) {
-	shader.setShaders(vertexShaderPath, fragmentShaderPath);
+	shader = std::unique_ptr<Shader>(new Shader(vertexShaderPath, fragmentShaderPath));
+
 	setTexture(texturePath);
 	setIsTextured(true);
 	setTransform(glm::mat4(1.0f));
@@ -29,6 +30,11 @@ void Mesh::drawWireframe(bool active) {
 		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);		// Set draw mode to filled polygon
 		drawMode = FILL;
 	}
+}
+
+void Mesh::rotate() {
+	transform = glm::rotate(transform, glm::radians(0.7f), glm::vec3(1.0f, 1.0f, 0.0f));
+
 }
 
 const vector<Position3> &Mesh::getVertices() const {
@@ -47,7 +53,7 @@ void Mesh::setTexture(std::string &filepath) {
 	Mesh::texture = Texture(filepath);
 }
 
-void Mesh::setTextureCoords(std::vector<Position2> &textureCoords) {
+void Mesh::setTextureCoords(const std::vector<Position2> &textureCoords) {
 	Mesh::textureCoords = textureCoords;
 }
 
