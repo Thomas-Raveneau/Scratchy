@@ -28,10 +28,10 @@ int main() {
 //	Scratchy::Position3 a3(0.5, -0.5, 0);
 //	Scratchy::Position3 a4(-0.5, -0.5, 0);
 	std::string texturePath = "../Ressources/Textures/mc_texture.jpg";
-//	Scratchy::Color rectColor(64, 0, 0);
+	Scratchy::Color color(64, 100, 90);
 //
 //	Scratchy::Rect rect = Scratchy::Rect(a1, a2, a3, a4, texturePath);
-	Scratchy::Cube cube = Scratchy::Cube(Position3(0, 0, 0), 0.5, texturePath);
+	Scratchy::Cube cube = Scratchy::Cube(Position3(0, 0, 0), 0.5, color);
 
 //	cube.drawWireframe(true);
 

@@ -1,3 +1,0 @@
-C:/Users/thoma/dev/Scratchy/cmake-build-debug/CMakeFiles/Scratchy.dir
-C:/Users/thoma/dev/Scratchy/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/thoma/dev/Scratchy/cmake-build-debug/CMakeFiles/rebuild_cache.dir
