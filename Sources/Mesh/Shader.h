@@ -25,13 +25,16 @@ namespace Scratchy {
 		public:
 			unsigned int ID;
 
+			std::string vertexShaderPath;
+			std::string fragmentShaderPath;
+
 		public:
 			Shader() = default;
-			Shader(std::string vertexPath, std::string fragmentPath);
+			Shader(const std::string &vertexPath, const std::string &fragmentPath);
 			~Shader();
 
 		public:
-			void setShaders(std::string vertexPath, std::string fragmentPath);
+			void setShaders(const std::string &vertexPath, const std::string &fragmentPath);
 			void use() const;
 
 		public:

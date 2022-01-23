@@ -8,6 +8,7 @@
 
 
 #include <Main/Viewport.h>
+#include <Main/Camera.h>
 #include <Utils/Color.h>
 #include <Mesh/Mesh.h>
 #include <Mesh/Primitives/Rect.h>
@@ -27,10 +28,19 @@ namespace Scratchy {
 		private:
 			GLFWwindow* window;
 			std::string title;
+
 			STATE state;
 			Color clearColor;
+			float deltaTime = 0.0f;
+			float lastFrame = 0.0f;
 
 			std::vector<Mesh *> meshes;
+			std::vector<Shader *> shaders;
+
+			std::unique_ptr<Camera> camera;
+
+			bool mouseAlreadyUsed =  false;
+			std::unique_ptr<Position2> mousePos;
 
 		public:
 			Window(int width, int height, const std::string &title);
@@ -47,8 +57,16 @@ namespace Scratchy {
 
 			void pollEvents();
 
+			void addMesh(Mesh &mesh);
+			void drawMeshes();
+
+			bool isKeyPressed(int key);
+
 		private:
-			static void resize(GLFWwindow* window, int width, int height);
+			void setCallbacks();
+
+			static void processMouse(GLFWwindow* window, double x, double y);
+			static void processResize(GLFWwindow* window, int width, int height);
 
 		public:
 			const std::string &getTitle() const;
@@ -56,10 +74,6 @@ namespace Scratchy {
 
 			const Color &getClearColor() const;
 			void setClearColor(Color clearColor);
-
-			void addMesh(Mesh &mesh);
-
-			void drawMeshes();
 	};
 }
 

@@ -28,6 +28,7 @@ set(SOURCES
 
         ${SRC_DIR}/Main/Viewport.cpp                    ${SRC_DIR}/Main/Viewport.h
         ${SRC_DIR}/Main/Window.cpp                      ${SRC_DIR}/Main/Window.h
+        ${SRC_DIR}/Main/Camera.cpp                      ${SRC_DIR}/Main/Camera.h
 
         ${SRC_DIR}/Mesh/IMesh.h
         ${SRC_DIR}/Mesh/Mesh.cpp                        ${SRC_DIR}/Mesh/Mesh.h

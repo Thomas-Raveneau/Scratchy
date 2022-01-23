@@ -13,7 +13,7 @@ const std::string FRAGMENT_COLOR_SHADER = std::string("../Shaders/Fragment/color
 const std::string VERTEX_TEXTURE_SHADER = std::string("../Shaders/Vertex/texture.vs");
 const std::string FRAGMENT_TEXTURE_SHADER = std::string("../Shaders/Fragment/texture.fs");
 
-Cube::Cube(Position3 position, float size, Color color): Mesh(VERTEX_COLOR_SHADER, FRAGMENT_COLOR_SHADER) {
+Cube::Cube(Position3 position, float size, const Color &color): Mesh(CUBE, VERTEX_COLOR_SHADER, FRAGMENT_COLOR_SHADER) {
 	Mesh::setIsTextured(false);
 	setColor(color);
 	Mesh::setVertices({
@@ -73,81 +73,119 @@ Cube::Cube(Position3 position, float size, Color color): Mesh(VERTEX_COLOR_SHADE
 	glEnableVertexAttribArray(1);
 }
 
-Cube::Cube(Position3 position, float size, std::string texturePath): Mesh() {
+Cube::Cube(Position3 position, float size, const Texture &texture): Mesh() {
+	vertexShaderPath = VERTEX_TEXTURE_SHADER;
+	fragmentShaderPath = FRAGMENT_TEXTURE_SHADER;
 	setIsTextured(true);
-	faces.insert(faces.end(), {
-		new Rect(position + Position3( size / 2 ,size / 2, -size / 2), 	// BACK FACE
-				 position + Position3( -size / 2 ,size / 2, -size / 2),
-				 position + Position3( -size / 2 ,-size / 2, -size / 2),
-				 position + Position3( size / 2 ,-size / 2, -size / 2),
-				 texturePath),
+	faces.insert(faces.end(),
+				 std::make_unique<Rect>(position + Position3(size / 2, size / 2, -size / 2),    // BACK FACE
+										position + Position3(-size / 2, size / 2, -size / 2),
+										position + Position3(-size / 2, -size / 2, -size / 2),
+										position + Position3(size / 2, -size / 2, -size / 2),
+										texture));
+	faces.insert(faces.end(),
+				 std::make_unique<Rect>(position + Position3(-size / 2, size / 2, size / 2),    // FRONT FACE
+										position + Position3(size / 2, size / 2, size / 2),
+										position + Position3(size / 2, -size / 2, size / 2),
+										position + Position3(-size / 2, -size / 2, size / 2),
+										texture));
+	faces.insert(faces.end(),
+				 std::make_unique<Rect>(position + Position3(size / 2, size / 2, size / 2),    // RIGHT FACE
+										position + Position3(size / 2, size / 2, -size / 2),
+										position + Position3(size / 2, -size / 2, -size / 2),
+										position + Position3(size / 2, -size / 2, size / 2),
+										texture));
+	faces.insert(faces.end(),
+				 std::make_unique<Rect>(position + Position3(-size / 2, size / 2, -size / 2),    // LEFT FACE
+										position + Position3(-size / 2, size / 2, size / 2),
+										position + Position3(-size / 2, -size / 2, size / 2),
+										position + Position3(-size / 2, -size / 2, -size / 2),
+										texture));
+	faces.insert(faces.end(),
+				 std::make_unique<Rect>(position + Position3(-size / 2, size / 2, -size / 2),    // TOP FACE
+										position + Position3(size / 2, size / 2, -size / 2),
+										position + Position3(size / 2, size / 2, size / 2),
+										position + Position3(-size / 2, size / 2, size / 2),
+										texture));
+	faces.insert(faces.end(),
+				 std::make_unique<Rect>(position + Position3(-size / 2, -size / 2, size / 2),    // BOT FACE
+										position + Position3(size / 2, -size / 2, size / 2),
+										position + Position3(size / 2, -size / 2, -size / 2),
+										position + Position3(-size / 2, -size / 2, -size / 2),
+										texture));
+}
 
-		new Rect(position + Position3( -size / 2 ,size / 2, size / 2), 	// FRONT FACE
-				 position + Position3( size / 2 ,size / 2, size / 2),
-				 position + Position3( size / 2 ,-size / 2, size / 2),
-				 position + Position3( -size / 2 ,-size / 2, size / 2),
-				 texturePath),
-
-		new Rect(position + Position3( size / 2 ,size / 2, size / 2), 	// RIGHT FACE
-				 position + Position3( size / 2 ,size / 2, -size / 2),
-				 position + Position3( size / 2 ,-size / 2, -size / 2),
-				 position + Position3( size / 2 ,-size / 2, size / 2),
-				 texturePath),
-
-		new Rect(position + Position3( -size / 2 ,size / 2, -size / 2), 	// LEFT FACE
-				 position + Position3( -size / 2 ,size / 2, size / 2),
-				 position + Position3( -size / 2 ,-size / 2, size / 2),
-				 position + Position3( -size / 2 ,-size / 2, -size / 2),
-				 texturePath),
-
-		new Rect(position + Position3( -size / 2 ,size / 2, -size / 2), 	// TOP FACE
-				 position + Position3( size / 2 ,size / 2, -size / 2),
-				 position + Position3( size / 2 ,size / 2, size / 2),
-				 position + Position3( -size / 2 ,size / 2, size / 2),
-				 texturePath),
-
-		new Rect(position + Position3( -size / 2 ,-size / 2, -size / 2), 	// BACK FACE
-				 position + Position3( size / 2 ,-size / 2, -size / 2),
-				 position + Position3( size / 2 ,-size / 2, size / 2),
-				 position + Position3( -size / 2 ,-size / 2, size / 2),
-				 texturePath),
-	});
+Cube::Cube(Position3 position, float size, const Texture &sideTexture, const Texture &topTexture, const Texture &bottomTexture) {
+	vertexShaderPath = VERTEX_TEXTURE_SHADER;
+	fragmentShaderPath = FRAGMENT_TEXTURE_SHADER;
+	setIsTextured(true);
+	faces.insert(faces.end(),
+				 std::make_unique<Rect>(position + Position3(size / 2, size / 2, -size / 2),    // BACK FACE
+				 position + Position3(-size / 2, size / 2, -size / 2),
+				 position + Position3(-size / 2, -size / 2, -size / 2),
+				 position + Position3(size / 2, -size / 2, -size / 2),
+					sideTexture));
+	faces.insert(faces.end(),
+				 std::make_unique<Rect>(position + Position3(-size / 2, size / 2, size / 2),    // FRONT FACE
+					 position + Position3(size / 2, size / 2, size / 2),
+					 position + Position3(size / 2, -size / 2, size / 2),
+					 position + Position3(-size / 2, -size / 2, size / 2),
+					 sideTexture));
+	faces.insert(faces.end(),
+				 std::make_unique<Rect>(position + Position3(size / 2, size / 2, size / 2),    // RIGHT FACE
+					 position + Position3(size / 2, size / 2, -size / 2),
+					 position + Position3(size / 2, -size / 2, -size / 2),
+					 position + Position3(size / 2, -size / 2, size / 2),
+					 sideTexture));
+	faces.insert(faces.end(),
+				 std::make_unique<Rect>(position + Position3(-size / 2, size / 2, -size / 2),    // LEFT FACE
+					 position + Position3(-size / 2, size / 2, size / 2),
+					 position + Position3(-size / 2, -size / 2, size / 2),
+					 position + Position3(-size / 2, -size / 2, -size / 2),
+					 sideTexture));
+	faces.insert(faces.end(),
+				 std::make_unique<Rect>(position + Position3(-size / 2, size / 2, -size / 2),    // TOP FACE
+					 position + Position3(size / 2, size / 2, -size / 2),
+					 position + Position3(size / 2, size / 2, size / 2),
+					 position + Position3(-size / 2, size / 2, size / 2),
+					 topTexture));
+	faces.insert(faces.end(),
+				 std::make_unique<Rect>(position + Position3(-size / 2, -size / 2, size / 2),    // BOT FACE
+					 position + Position3(size / 2, -size / 2, size / 2),
+					 position + Position3(size / 2, -size / 2, -size / 2),
+					 position + Position3(-size / 2, -size / 2, -size / 2),
+					 bottomTexture));
 }
 
 Cube::~Cube() {
 	glDeleteVertexArrays(1, &VAO);
 	glDeleteBuffers(1, &VBO);
 	glDeleteBuffers(1, &EBO);
-
-	for (Rect *rect: faces) {
-		delete rect;
-	}
 }
 
-void Cube::draw(int windowWith, int windowHeight) const {
+void Cube::draw(int windowWith, int windowHeight, glm::mat4 view) const {
 	if (getIsTextured()) {
-		for (Rect *rect: faces) {
-			rect->rotate();
-			rect->draw(windowWith, windowHeight);
+		for (auto const &rect: faces) {
+			rect->draw(windowWith, windowHeight, view);
 		}
 	} else {
-		shader->use();
+		shader.use();
 
-		glm::mat4 view          = glm::mat4(1.0f);
 		glm::mat4 projection    = glm::mat4(1.0f);
 
-		view  = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
 		projection = glm::perspective(glm::radians(45.0f), (float)windowWith / (float)windowHeight, 0.1f, 100.0f);
 
-		unsigned int modelLoc = glGetUniformLocation(shader->ID, "model");
-		unsigned int viewLoc  = glGetUniformLocation(shader->ID, "view");
-
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(transform));
-		glUniformMatrix4fv(viewLoc, 1, GL_FALSE, &view[0][0]);
-
-		shader->setMat4("projection", projection);
+		shader.setMat4("projection", projection);
+		shader.setMat4("view", view);
+		shader.setMat4("model", getTransform());
 
 		glBindVertexArray(VAO);
 		glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
+	}
+}
+
+void Cube::setShader(Shader shader) {
+	for (auto const &rect: faces) {
+		rect->setShader(shader);
 	}
 }

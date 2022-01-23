@@ -8,16 +8,34 @@
 using namespace Scratchy;
 using namespace std;
 
-Mesh::Mesh(std::string vertexShaderPath, std::string fragmentShaderPath) {
-	shader = std::unique_ptr<Shader>(new Shader(vertexShaderPath, fragmentShaderPath));
+Mesh::Mesh(TYPE type, const std::string &vertexShaderPath, const std::string &fragmentShaderPath) {
+	Mesh::vertexShaderPath = vertexShaderPath;
+	Mesh::fragmentShaderPath = fragmentShaderPath;
+//	Mesh::shader = std::unique_ptr<Shader>(new Shader(vertexShaderPath, fragmentShaderPath));
+	Mesh::type = type;
+
 	setIsTextured(false);
 	setTransform(glm::mat4(1.0f));
 }
 
-Mesh::Mesh(std::string vertexShaderPath, std::string fragmentShaderPath, std::string texturePath) {
-	shader = std::unique_ptr<Shader>(new Shader(vertexShaderPath, fragmentShaderPath));
+Mesh::Mesh(TYPE type, const std::string &vertexShaderPath, const std::string &fragmentShaderPath, const std::string &texturePath) {
+	Mesh::vertexShaderPath = vertexShaderPath;
+	Mesh::fragmentShaderPath = fragmentShaderPath;
+//	Mesh::shader = std::unique_ptr<Shader>(new Shader(vertexShaderPath, fragmentShaderPath));
+	Mesh::type = type;
 
 	setTexture(texturePath);
+	setIsTextured(true);
+	setTransform(glm::mat4(1.0f));
+}
+
+Mesh::Mesh(TYPE type, const std::string &vertexShaderPath, const std::string &fragmentShaderPath, const Texture &texture) {
+	Mesh::vertexShaderPath = vertexShaderPath;
+	Mesh::fragmentShaderPath = fragmentShaderPath;
+//	Mesh::shader = std::unique_ptr<Shader>(new Shader(vertexShaderPath, fragmentShaderPath));
+	Mesh::type = type;
+
+	setTexture(texture);
 	setIsTextured(true);
 	setTransform(glm::mat4(1.0f));
 }
@@ -34,7 +52,6 @@ void Mesh::drawWireframe(bool active) {
 
 void Mesh::rotate() {
 	transform = glm::rotate(transform, glm::radians(0.7f), glm::vec3(1.0f, 1.0f, 0.0f));
-
 }
 
 const vector<Position3> &Mesh::getVertices() const {
@@ -45,12 +62,16 @@ void Mesh::setVertices(const vector<Position3> &vertices) {
 	Mesh::vertices = vertices;
 }
 
-void Mesh::setColor(Color &color) {
+void Mesh::setColor(const Color &color) {
 	Mesh::color = color;
 }
 
-void Mesh::setTexture(std::string &filepath) {
+void Mesh::setTexture(const std::string &filepath) {
 	Mesh::texture = Texture(filepath);
+}
+
+void Mesh::setTexture(const Texture &texture) {
+	Mesh::texture = texture;
 }
 
 void Mesh::setTextureCoords(const std::vector<Position2> &textureCoords) {
@@ -103,4 +124,11 @@ const glm::mat4 &Mesh::getTransform() const {
 
 void Mesh::setTransform(const glm::mat4 &transform) {
 	Mesh::transform = transform;
+}
+
+void Mesh::setShader(Shader shader) {
+	std::cout << "A: " << shader.ID << std::endl;
+	Mesh::shader = shader;
+	std::cout << "B: " << this->shader.ID << std::endl;
+
 }

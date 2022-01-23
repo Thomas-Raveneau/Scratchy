@@ -8,8 +8,12 @@
 using namespace Scratchy;
 using namespace std;
 
+void errorCallback(int error_code, const char* description);
+
 Window::Window(int width, int height, const std::string &title) : Viewport(width, height) {
 	setTitle(title);
+	camera = unique_ptr<Camera>(new Camera(glm::vec3(0.0f, 2.0f, 5.0f)));
+	mousePos = std::unique_ptr<Position2>(new Position2(400, 300));
 
 	glfwInit();
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -37,15 +41,18 @@ int Window::init(Color clearColor) {
 
 	glfwMakeContextCurrent(Window::window);
 
-	glfwSetWindowUserPointer(window, reinterpret_cast<void*>(this));
-	glfwSetFramebufferSizeCallback(Window::window, resize);
+	setCallbacks();
 
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
 		std::cout << "Failed to initialize GLAD" << std::endl;
 		return -1;
 	}
+	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
+	glEnable(GL_DEBUG_OUTPUT);
 	glEnable(GL_DEPTH_TEST);
+	glEnable(GL_CULL_FACE);
+	glCullFace(GL_FRONT);
 
 	state = OPEN;
 
@@ -76,13 +83,83 @@ void Window::pollEvents() {
 	glfwPollEvents();
 }
 
-void Window::resize(GLFWwindow *window, int width, int height) {
+void Window::addMesh(Mesh &mesh) {
+	bool shaderFound = false;
+
+	for (Shader *shader: shaders) {
+		if (shader->vertexShaderPath == mesh.vertexShaderPath
+			&& shader->fragmentShaderPath == mesh.fragmentShaderPath) {
+			shaderFound = true;
+			mesh.setShader(*shader);
+			break;
+		}
+	}
+	if (!shaderFound) {
+		Shader *shader = new Shader(mesh.vertexShaderPath, mesh.fragmentShaderPath);
+		mesh.setShader(*shader);
+
+		shaders.insert(shaders.end(), shader);
+	}
+//	&mesh.shader->ID;
+	std::cout << "C: " << mesh.shader.ID << std::endl;
+	meshes.push_back(&mesh);
+	std::cout << "D: " << meshes[0]->shader.ID << std::endl;
+
+}
+
+void Window::drawMeshes() {
+	if (getWidth() > 0) {
+		float currentFrame = glfwGetTime();
+		deltaTime = currentFrame - lastFrame;
+		lastFrame = currentFrame;
+
+		if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
+			camera->processKeyboard(Camera::FORWARD, deltaTime);
+		if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+			camera->processKeyboard(Camera::BACKWARD, deltaTime);
+		if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
+			camera->processKeyboard(Camera::LEFT, deltaTime);
+		if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
+			camera->processKeyboard(Camera::RIGHT, deltaTime);
+
+		for (auto mesh: meshes) {
+			mesh->draw(getWidth(), getHeight(), camera->getViewMatrix());
+		}
+	}
+}
+
+bool Window::isKeyPressed(int key) {
+	return glfwGetKey(Window::window, key) == GLFW_PRESS ? true : false;
+}
+
+void Window::setCallbacks() {
+	glfwSetWindowUserPointer(window, reinterpret_cast<void*>(this));
+
+//	glDebugMessageCallback(messageCallback, 0 );
+	glfwSetErrorCallback(errorCallback);
+	glfwSetCursorPosCallback(window, processMouse);
+	glfwSetFramebufferSizeCallback(Window::window, processResize);
+}
+
+void Window::processMouse(GLFWwindow *window, double x, double y) {
+	Window *handler = reinterpret_cast<Window *>(glfwGetWindowUserPointer(window));
+	if (!handler->mouseAlreadyUsed) {
+		handler->mousePos->setPosition(x, y);
+		handler->mouseAlreadyUsed = true;
+	}
+
+	float xOffset = x - handler->mousePos->getX();
+	float yOffset = handler->mousePos->getY() - y;
+	handler->mousePos->setPosition(x, y);
+
+	handler->camera->processMouseMovement(xOffset, yOffset);
+}
+
+void Window::processResize(GLFWwindow *window, int width, int height) {
 	Window *handler = reinterpret_cast<Window *>(glfwGetWindowUserPointer(window));
 
 	glViewport(0, 0, width, height);
 	handler->setSize(width, height);
-
-	std::cout << "DEBUG: Window->resize(" << width << ", " << height << ")" << std::endl;
 }
 
 const std::string &Window::getTitle() const {
@@ -101,14 +178,7 @@ void Window::setClearColor(Color clearColor) {
 	Window::clearColor = clearColor;
 }
 
-void Window::addMesh(Mesh &mesh) {
-	meshes.push_back(&mesh);
-}
-
-void Window::drawMeshes() {
-	if (getWidth() > 0) {
-		for (Mesh *mesh: meshes) {
-			mesh->draw(getWidth(), getHeight());
-		}
-	}
+void errorCallback(int error_code, const char* description)
+{
+	std::cout << "GLFW::ERROR: " << description << std::endl;
 }

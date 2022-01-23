@@ -15,7 +15,7 @@
 namespace Scratchy {
 
 	class Texture {
-		protected:
+		private:
 			unsigned int ID;
 
 		public:

@@ -14,8 +14,9 @@ namespace Scratchy {
 
 		public:
 			Mesh() = default;
-			Mesh(std::string vertexShaderPath, std::string fragmentShaderPath);
-			Mesh(std::string vertexShaderPath, std::string fragmentShaderPath, std::string texturePath);
+			Mesh(TYPE type, const std::string &vertexShaderPath, const std::string &fragmentShaderPath);
+			Mesh(TYPE type, const std::string &vertexShaderPath, const std::string &fragmentShaderPath, const Texture &texture);
+			Mesh(TYPE type, const std::string &vertexShaderPath, const std::string &fragmentShaderPath, const std::string &texturePath);
 			~Mesh() = default;
 
 		public :
@@ -28,10 +29,11 @@ namespace Scratchy {
 			void setVertices(const std::vector<Position3> &vertices) final;
 
 			std::vector<float> getColoredVertices() const final;
-			void setColor(Color &color) final;
+			void setColor(const Color &color) final;
 
 			std::vector<float> getTexturedVertices() const final;
-			void setTexture(std::string &filepath) final;
+			void setTexture(const std::string &filepath) final;
+			void setTexture(const Texture &texture) final;
 			void setTextureCoords(const std::vector<Position2> &textureCoords) final;
 
 			bool getIsTextured() const final;
@@ -39,8 +41,9 @@ namespace Scratchy {
 
 			const glm::mat4 &getTransform() const final;
 			void setTransform(const glm::mat4 &transform) final;
+
+			void setShader(Shader shader) override;
 	};
 }
-
 
 #endif //SCRATCHY_MESH_H

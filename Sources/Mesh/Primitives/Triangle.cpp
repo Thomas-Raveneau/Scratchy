@@ -13,8 +13,8 @@ const std::string FRAGMENT_COLOR_SHADER = std::string("../Shaders/Fragment/color
 const std::string VERTEX_TEXTURE_SHADER = std::string("../Shaders/Vertex/texture.vs");
 const std::string FRAGMENT_TEXTURE_SHADER = std::string("../Shaders/Fragment/texture.fs");
 
-Triangle::Triangle(Position3 a1, Position3 a2, Position3 a3, Color color):
-Mesh(VERTEX_COLOR_SHADER, FRAGMENT_COLOR_SHADER) {
+Triangle::Triangle(Position3 a1, Position3 a2, Position3 a3, const Color &color):
+Mesh(TRIANGLE, VERTEX_COLOR_SHADER, FRAGMENT_COLOR_SHADER) {
 	setVertices(std::vector<Position3>({a1, a2, a3}));
 	setColor(color);
 
@@ -36,9 +36,10 @@ Mesh(VERTEX_COLOR_SHADER, FRAGMENT_COLOR_SHADER) {
 	glEnableVertexAttribArray(1);
 }
 
-Triangle::Triangle(Position3 a1, Position3 a2, Position3 a3, std::string texturePath) :
-Mesh(VERTEX_TEXTURE_SHADER, FRAGMENT_TEXTURE_SHADER) {
+Triangle::Triangle(Position3 a1, Position3 a2, Position3 a3, const Texture &texture) :
+Mesh(TRIANGLE, VERTEX_TEXTURE_SHADER, FRAGMENT_TEXTURE_SHADER) {
 	setIsTextured(true);
+	setTexture(texture);
 	setVertices(std::vector<Position3>({a1, a2, a3}));
 	Position2 textureCoord1(0.0f, 1.0f);
 	Position2 textureCoord2(1.0f, 1.0f);
@@ -63,7 +64,6 @@ Mesh(VERTEX_TEXTURE_SHADER, FRAGMENT_TEXTURE_SHADER) {
 	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
 	glEnableVertexAttribArray(1);
 
-	setTexture(texturePath);
 }
 
 Triangle::~Triangle() {
@@ -71,26 +71,20 @@ Triangle::~Triangle() {
 	glDeleteBuffers(1, &VBO);
 }
 
-void Triangle::draw(int windowWith, int windowHeight) const {
+void Triangle::draw(int windowWith, int windowHeight, glm::mat4 view) const {
 	if (getIsTextured()) {
 		texture.render();
 	}
 
-	shader->use();
+	shader.use();
 
-	glm::mat4 view          = glm::mat4(1.0f);
 	glm::mat4 projection    = glm::mat4(1.0f);
-//	transform = glm::rotate(transform, glm::radians(-1.0f), glm::vec3(10.0f, 1.0f, 5.0f));
-	view  = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
+
 	projection = glm::perspective(glm::radians(45.0f), (float)windowWith / (float)windowHeight, 0.1f, 100.0f);
 
-	unsigned int modelLoc = glGetUniformLocation(shader->ID, "model");
-	unsigned int viewLoc  = glGetUniformLocation(shader->ID, "view");
-
-	glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(transform));
-	glUniformMatrix4fv(viewLoc, 1, GL_FALSE, &view[0][0]);
-
-	shader->setMat4("projection", projection);
+	shader.setMat4("projection", projection);
+	shader.setMat4("view", view);
+	shader.setMat4("model", getTransform());
 
 	glBindVertexArray(VAO);
 	glDrawArrays(GL_TRIANGLES, 0, 3);
