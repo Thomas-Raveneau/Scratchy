@@ -16,7 +16,7 @@ namespace Scratchy {
 	class Cube: public Mesh {
 
 		private:
-			std::vector<std::unique_ptr<Rect>> faces;
+			std::vector<Rect *> faces;
 
 		public:
 			Cube(Position3 position, float size, const Color &color);

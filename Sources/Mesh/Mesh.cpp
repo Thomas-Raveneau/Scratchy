@@ -11,7 +11,7 @@ using namespace std;
 Mesh::Mesh(TYPE type, const std::string &vertexShaderPath, const std::string &fragmentShaderPath) {
 	Mesh::vertexShaderPath = vertexShaderPath;
 	Mesh::fragmentShaderPath = fragmentShaderPath;
-//	Mesh::shader = std::unique_ptr<Shader>(new Shader(vertexShaderPath, fragmentShaderPath));
+	Mesh::shader = std::unique_ptr<Shader>(new Shader(vertexShaderPath, fragmentShaderPath));
 	Mesh::type = type;
 
 	setIsTextured(false);
@@ -21,7 +21,7 @@ Mesh::Mesh(TYPE type, const std::string &vertexShaderPath, const std::string &fr
 Mesh::Mesh(TYPE type, const std::string &vertexShaderPath, const std::string &fragmentShaderPath, const std::string &texturePath) {
 	Mesh::vertexShaderPath = vertexShaderPath;
 	Mesh::fragmentShaderPath = fragmentShaderPath;
-//	Mesh::shader = std::unique_ptr<Shader>(new Shader(vertexShaderPath, fragmentShaderPath));
+	Mesh::shader = std::unique_ptr<Shader>(new Shader(vertexShaderPath, fragmentShaderPath));
 	Mesh::type = type;
 
 	setTexture(texturePath);
@@ -32,7 +32,7 @@ Mesh::Mesh(TYPE type, const std::string &vertexShaderPath, const std::string &fr
 Mesh::Mesh(TYPE type, const std::string &vertexShaderPath, const std::string &fragmentShaderPath, const Texture &texture) {
 	Mesh::vertexShaderPath = vertexShaderPath;
 	Mesh::fragmentShaderPath = fragmentShaderPath;
-//	Mesh::shader = std::unique_ptr<Shader>(new Shader(vertexShaderPath, fragmentShaderPath));
+	Mesh::shader = std::unique_ptr<Shader>(new Shader(vertexShaderPath, fragmentShaderPath));
 	Mesh::type = type;
 
 	setTexture(texture);
@@ -51,7 +51,7 @@ void Mesh::drawWireframe(bool active) {
 }
 
 void Mesh::rotate() {
-	transform = glm::rotate(transform, glm::radians(0.7f), glm::vec3(1.0f, 1.0f, 0.0f));
+	transform = glm::rotate(transform, glm::radians(0.1f), glm::vec3(0.5f, 0.5f, 0.25f));
 }
 
 const vector<Position3> &Mesh::getVertices() const {
@@ -127,8 +127,5 @@ void Mesh::setTransform(const glm::mat4 &transform) {
 }
 
 void Mesh::setShader(Shader shader) {
-	std::cout << "A: " << shader.ID << std::endl;
-	Mesh::shader = shader;
-	std::cout << "B: " << this->shader.ID << std::endl;
-
+	//Mesh::shader = make_unique<Shader>(shader);
 }

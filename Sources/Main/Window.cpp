@@ -101,9 +101,9 @@ void Window::addMesh(Mesh &mesh) {
 		shaders.insert(shaders.end(), shader);
 	}
 //	&mesh.shader->ID;
-	std::cout << "C: " << mesh.shader.ID << std::endl;
+	std::cout << "C: " << &mesh.shader->ID << std::endl;
 	meshes.push_back(&mesh);
-	std::cout << "D: " << meshes[0]->shader.ID << std::endl;
+	std::cout << "D: " << &meshes[0]->shader->ID << std::endl;
 
 }
 
@@ -124,6 +124,7 @@ void Window::drawMeshes() {
 
 		for (auto mesh: meshes) {
 			mesh->draw(getWidth(), getHeight(), camera->getViewMatrix());
+			mesh->rotate();
 		}
 	}
 }

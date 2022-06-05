@@ -76,15 +76,15 @@ void Triangle::draw(int windowWith, int windowHeight, glm::mat4 view) const {
 		texture.render();
 	}
 
-	shader.use();
+	shader->use();
 
 	glm::mat4 projection    = glm::mat4(1.0f);
 
 	projection = glm::perspective(glm::radians(45.0f), (float)windowWith / (float)windowHeight, 0.1f, 100.0f);
 
-	shader.setMat4("projection", projection);
-	shader.setMat4("view", view);
-	shader.setMat4("model", getTransform());
+	shader->setMat4("projection", projection);
+	shader->setMat4("view", view);
+	shader->setMat4("model", getTransform());
 
 	glBindVertexArray(VAO);
 	glDrawArrays(GL_TRIANGLES, 0, 3);

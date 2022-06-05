@@ -1,0 +1,146 @@
+
+#################
+###  GLFW
+#################
+set(CONAN_GLFW_ROOT_DEBUG "C:/Users/thoma/.conan/data/glfw/3.3.6/_/_/package/72e84aac9213a09dfb0f59578ae9423a2eb326e7")
+set(CONAN_INCLUDE_DIRS_GLFW_DEBUG "C:/Users/thoma/.conan/data/glfw/3.3.6/_/_/package/72e84aac9213a09dfb0f59578ae9423a2eb326e7/include")
+set(CONAN_LIB_DIRS_GLFW_DEBUG "C:/Users/thoma/.conan/data/glfw/3.3.6/_/_/package/72e84aac9213a09dfb0f59578ae9423a2eb326e7/lib")
+set(CONAN_BIN_DIRS_GLFW_DEBUG )
+set(CONAN_RES_DIRS_GLFW_DEBUG )
+set(CONAN_SRC_DIRS_GLFW_DEBUG )
+set(CONAN_BUILD_DIRS_GLFW_DEBUG "C:/Users/thoma/.conan/data/glfw/3.3.6/_/_/package/72e84aac9213a09dfb0f59578ae9423a2eb326e7/")
+set(CONAN_FRAMEWORK_DIRS_GLFW_DEBUG )
+set(CONAN_LIBS_GLFW_DEBUG glfw3)
+set(CONAN_PKG_LIBS_GLFW_DEBUG glfw3)
+set(CONAN_SYSTEM_LIBS_GLFW_DEBUG gdi32)
+set(CONAN_FRAMEWORKS_GLFW_DEBUG )
+set(CONAN_FRAMEWORKS_FOUND_GLFW_DEBUG "")  # Will be filled later
+set(CONAN_DEFINES_GLFW_DEBUG )
+set(CONAN_BUILD_MODULES_PATHS_GLFW_DEBUG )
+# COMPILE_DEFINITIONS are equal to CONAN_DEFINES without -D, for targets
+set(CONAN_COMPILE_DEFINITIONS_GLFW_DEBUG )
+
+set(CONAN_C_FLAGS_GLFW_DEBUG "")
+set(CONAN_CXX_FLAGS_GLFW_DEBUG "")
+set(CONAN_SHARED_LINKER_FLAGS_GLFW_DEBUG "")
+set(CONAN_EXE_LINKER_FLAGS_GLFW_DEBUG "")
+
+# For modern cmake targets we use the list variables (separated with ;)
+set(CONAN_C_FLAGS_GLFW_DEBUG_LIST "")
+set(CONAN_CXX_FLAGS_GLFW_DEBUG_LIST "")
+set(CONAN_SHARED_LINKER_FLAGS_GLFW_DEBUG_LIST "")
+set(CONAN_EXE_LINKER_FLAGS_GLFW_DEBUG_LIST "")
+
+# Apple Frameworks
+conan_find_apple_frameworks(CONAN_FRAMEWORKS_FOUND_GLFW_DEBUG "${CONAN_FRAMEWORKS_GLFW_DEBUG}" "_GLFW" "_DEBUG")
+# Append to aggregated values variable
+set(CONAN_LIBS_GLFW_DEBUG ${CONAN_PKG_LIBS_GLFW_DEBUG} ${CONAN_SYSTEM_LIBS_GLFW_DEBUG} ${CONAN_FRAMEWORKS_FOUND_GLFW_DEBUG})
+
+
+#################
+###  GLAD
+#################
+set(CONAN_GLAD_ROOT_DEBUG "C:/Users/thoma/.conan/data/glad/0.1.34/_/_/package/01fb4a1dcdf8f1edae8a28c270965dc30981d468")
+set(CONAN_INCLUDE_DIRS_GLAD_DEBUG "C:/Users/thoma/.conan/data/glad/0.1.34/_/_/package/01fb4a1dcdf8f1edae8a28c270965dc30981d468/include")
+set(CONAN_LIB_DIRS_GLAD_DEBUG "C:/Users/thoma/.conan/data/glad/0.1.34/_/_/package/01fb4a1dcdf8f1edae8a28c270965dc30981d468/lib")
+set(CONAN_BIN_DIRS_GLAD_DEBUG )
+set(CONAN_RES_DIRS_GLAD_DEBUG )
+set(CONAN_SRC_DIRS_GLAD_DEBUG )
+set(CONAN_BUILD_DIRS_GLAD_DEBUG "C:/Users/thoma/.conan/data/glad/0.1.34/_/_/package/01fb4a1dcdf8f1edae8a28c270965dc30981d468/")
+set(CONAN_FRAMEWORK_DIRS_GLAD_DEBUG )
+set(CONAN_LIBS_GLAD_DEBUG glad)
+set(CONAN_PKG_LIBS_GLAD_DEBUG glad)
+set(CONAN_SYSTEM_LIBS_GLAD_DEBUG )
+set(CONAN_FRAMEWORKS_GLAD_DEBUG )
+set(CONAN_FRAMEWORKS_FOUND_GLAD_DEBUG "")  # Will be filled later
+set(CONAN_DEFINES_GLAD_DEBUG )
+set(CONAN_BUILD_MODULES_PATHS_GLAD_DEBUG )
+# COMPILE_DEFINITIONS are equal to CONAN_DEFINES without -D, for targets
+set(CONAN_COMPILE_DEFINITIONS_GLAD_DEBUG )
+
+set(CONAN_C_FLAGS_GLAD_DEBUG "")
+set(CONAN_CXX_FLAGS_GLAD_DEBUG "")
+set(CONAN_SHARED_LINKER_FLAGS_GLAD_DEBUG "")
+set(CONAN_EXE_LINKER_FLAGS_GLAD_DEBUG "")
+
+# For modern cmake targets we use the list variables (separated with ;)
+set(CONAN_C_FLAGS_GLAD_DEBUG_LIST "")
+set(CONAN_CXX_FLAGS_GLAD_DEBUG_LIST "")
+set(CONAN_SHARED_LINKER_FLAGS_GLAD_DEBUG_LIST "")
+set(CONAN_EXE_LINKER_FLAGS_GLAD_DEBUG_LIST "")
+
+# Apple Frameworks
+conan_find_apple_frameworks(CONAN_FRAMEWORKS_FOUND_GLAD_DEBUG "${CONAN_FRAMEWORKS_GLAD_DEBUG}" "_GLAD" "_DEBUG")
+# Append to aggregated values variable
+set(CONAN_LIBS_GLAD_DEBUG ${CONAN_PKG_LIBS_GLAD_DEBUG} ${CONAN_SYSTEM_LIBS_GLAD_DEBUG} ${CONAN_FRAMEWORKS_FOUND_GLAD_DEBUG})
+
+
+#################
+###  OPENGL
+#################
+set(CONAN_OPENGL_ROOT_DEBUG "C:/Users/thoma/.conan/data/opengl/system/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9")
+set(CONAN_INCLUDE_DIRS_OPENGL_DEBUG )
+set(CONAN_LIB_DIRS_OPENGL_DEBUG )
+set(CONAN_BIN_DIRS_OPENGL_DEBUG )
+set(CONAN_RES_DIRS_OPENGL_DEBUG )
+set(CONAN_SRC_DIRS_OPENGL_DEBUG )
+set(CONAN_BUILD_DIRS_OPENGL_DEBUG "C:/Users/thoma/.conan/data/opengl/system/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/")
+set(CONAN_FRAMEWORK_DIRS_OPENGL_DEBUG )
+set(CONAN_LIBS_OPENGL_DEBUG )
+set(CONAN_PKG_LIBS_OPENGL_DEBUG )
+set(CONAN_SYSTEM_LIBS_OPENGL_DEBUG opengl32)
+set(CONAN_FRAMEWORKS_OPENGL_DEBUG )
+set(CONAN_FRAMEWORKS_FOUND_OPENGL_DEBUG "")  # Will be filled later
+set(CONAN_DEFINES_OPENGL_DEBUG )
+set(CONAN_BUILD_MODULES_PATHS_OPENGL_DEBUG )
+# COMPILE_DEFINITIONS are equal to CONAN_DEFINES without -D, for targets
+set(CONAN_COMPILE_DEFINITIONS_OPENGL_DEBUG )
+
+set(CONAN_C_FLAGS_OPENGL_DEBUG "")
+set(CONAN_CXX_FLAGS_OPENGL_DEBUG "")
+set(CONAN_SHARED_LINKER_FLAGS_OPENGL_DEBUG "")
+set(CONAN_EXE_LINKER_FLAGS_OPENGL_DEBUG "")
+
+# For modern cmake targets we use the list variables (separated with ;)
+set(CONAN_C_FLAGS_OPENGL_DEBUG_LIST "")
+set(CONAN_CXX_FLAGS_OPENGL_DEBUG_LIST "")
+set(CONAN_SHARED_LINKER_FLAGS_OPENGL_DEBUG_LIST "")
+set(CONAN_EXE_LINKER_FLAGS_OPENGL_DEBUG_LIST "")
+
+# Apple Frameworks
+conan_find_apple_frameworks(CONAN_FRAMEWORKS_FOUND_OPENGL_DEBUG "${CONAN_FRAMEWORKS_OPENGL_DEBUG}" "_OPENGL" "_DEBUG")
+# Append to aggregated values variable
+set(CONAN_LIBS_OPENGL_DEBUG ${CONAN_PKG_LIBS_OPENGL_DEBUG} ${CONAN_SYSTEM_LIBS_OPENGL_DEBUG} ${CONAN_FRAMEWORKS_FOUND_OPENGL_DEBUG})
+
+
+### Definition of global aggregated variables ###
+
+set(CONAN_DEPENDENCIES_DEBUG glfw glad opengl)
+
+set(CONAN_INCLUDE_DIRS_DEBUG "C:/Users/thoma/.conan/data/glfw/3.3.6/_/_/package/72e84aac9213a09dfb0f59578ae9423a2eb326e7/include"
+			"C:/Users/thoma/.conan/data/glad/0.1.34/_/_/package/01fb4a1dcdf8f1edae8a28c270965dc30981d468/include" ${CONAN_INCLUDE_DIRS_DEBUG})
+set(CONAN_LIB_DIRS_DEBUG "C:/Users/thoma/.conan/data/glfw/3.3.6/_/_/package/72e84aac9213a09dfb0f59578ae9423a2eb326e7/lib"
+			"C:/Users/thoma/.conan/data/glad/0.1.34/_/_/package/01fb4a1dcdf8f1edae8a28c270965dc30981d468/lib" ${CONAN_LIB_DIRS_DEBUG})
+set(CONAN_BIN_DIRS_DEBUG  ${CONAN_BIN_DIRS_DEBUG})
+set(CONAN_RES_DIRS_DEBUG  ${CONAN_RES_DIRS_DEBUG})
+set(CONAN_FRAMEWORK_DIRS_DEBUG  ${CONAN_FRAMEWORK_DIRS_DEBUG})
+set(CONAN_LIBS_DEBUG glfw3 glad ${CONAN_LIBS_DEBUG})
+set(CONAN_PKG_LIBS_DEBUG glfw3 glad ${CONAN_PKG_LIBS_DEBUG})
+set(CONAN_SYSTEM_LIBS_DEBUG gdi32 opengl32 ${CONAN_SYSTEM_LIBS_DEBUG})
+set(CONAN_FRAMEWORKS_DEBUG  ${CONAN_FRAMEWORKS_DEBUG})
+set(CONAN_FRAMEWORKS_FOUND_DEBUG "")  # Will be filled later
+set(CONAN_DEFINES_DEBUG  ${CONAN_DEFINES_DEBUG})
+set(CONAN_BUILD_MODULES_PATHS_DEBUG  ${CONAN_BUILD_MODULES_PATHS_DEBUG})
+set(CONAN_CMAKE_MODULE_PATH_DEBUG "C:/Users/thoma/.conan/data/glfw/3.3.6/_/_/package/72e84aac9213a09dfb0f59578ae9423a2eb326e7/"
+			"C:/Users/thoma/.conan/data/glad/0.1.34/_/_/package/01fb4a1dcdf8f1edae8a28c270965dc30981d468/"
+			"C:/Users/thoma/.conan/data/opengl/system/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/" ${CONAN_CMAKE_MODULE_PATH_DEBUG})
+
+set(CONAN_CXX_FLAGS_DEBUG " ${CONAN_CXX_FLAGS_DEBUG}")
+set(CONAN_SHARED_LINKER_FLAGS_DEBUG " ${CONAN_SHARED_LINKER_FLAGS_DEBUG}")
+set(CONAN_EXE_LINKER_FLAGS_DEBUG " ${CONAN_EXE_LINKER_FLAGS_DEBUG}")
+set(CONAN_C_FLAGS_DEBUG " ${CONAN_C_FLAGS_DEBUG}")
+
+# Apple Frameworks
+conan_find_apple_frameworks(CONAN_FRAMEWORKS_FOUND_DEBUG "${CONAN_FRAMEWORKS_DEBUG}" "" "_DEBUG")
+# Append to aggregated values variable: Use CONAN_LIBS instead of CONAN_PKG_LIBS to include user appended vars
+set(CONAN_LIBS_DEBUG ${CONAN_LIBS_DEBUG} ${CONAN_SYSTEM_LIBS_DEBUG} ${CONAN_FRAMEWORKS_FOUND_DEBUG})

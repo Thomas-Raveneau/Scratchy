@@ -7,11 +7,11 @@
 
 using namespace Scratchy;
 
-const std::string VERTEX_COLOR_SHADER = std::string("../Shaders/Vertex/color.vs");
-const std::string FRAGMENT_COLOR_SHADER = std::string("../Shaders/Fragment/color.fs");
+const std::string VERTEX_COLOR_SHADER = std::string("./Shaders/Vertex/color.vs");
+const std::string FRAGMENT_COLOR_SHADER = std::string("./Shaders/Fragment/color.fs");
 
-const std::string VERTEX_TEXTURE_SHADER = std::string("../Shaders/Vertex/texture.vs");
-const std::string FRAGMENT_TEXTURE_SHADER = std::string("../Shaders/Fragment/texture.fs");
+const std::string VERTEX_TEXTURE_SHADER = std::string("./Shaders/Vertex/texture.vs");
+const std::string FRAGMENT_TEXTURE_SHADER = std::string("./Shaders/Fragment/texture.fs");
 
 Rect::Rect(Position3 a1, Position3 a2, Position3 a3, Position3 a4, Color color):
 Mesh(RECTANGLE, VERTEX_COLOR_SHADER, FRAGMENT_COLOR_SHADER) {
@@ -97,15 +97,16 @@ void Rect::draw(int windowWith, int windowHeight, glm::mat4 view) const {
 		texture.render();
 	}
 
-	std::cout << "E: " << shader.ID << std::endl;
-	shader.use();
+	//std::cout << "E: " << &shader->ID << std::endl;
+	shader->use();
+
 	glm::mat4 projection    = glm::mat4(1.0f);
 
 	projection = glm::perspective(glm::radians(45.0f), (float)windowWith / (float)windowHeight, 0.1f, 100.0f);
 
-	shader.setMat4("projection", projection);
-	shader.setMat4("view", view);
-	shader.setMat4("model", getTransform());
+	shader->setMat4("projection", projection);
+	shader->setMat4("view", view);
+	shader->setMat4("model", getTransform());
 
 	glBindVertexArray(VAO);
 	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);

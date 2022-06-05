@@ -1,0 +1,3 @@
+D:/GameDev/Scratchy/CMakeFiles/Scratchy.dir
+D:/GameDev/Scratchy/CMakeFiles/ALL_BUILD.dir
+D:/GameDev/Scratchy/CMakeFiles/ZERO_CHECK.dir
