@@ -167,6 +167,7 @@ void Cube::draw(int windowWith, int windowHeight, glm::mat4 view) const {
 	if (getIsTextured()) {
 		for (auto const& rect : faces) {
 			rect->draw(windowWith, windowHeight, view);
+			//rect->rotate();
 		}
 	}
 	else {

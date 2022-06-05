@@ -37,7 +37,7 @@ namespace Scratchy {
 			unsigned int EBO;
 
 			Color color;
-			std::unique_ptr<Shader> shader;
+			Shader *shader;
 			Texture texture;
 
 			TYPE type;

@@ -30,21 +30,69 @@ int main() {
 	Texture textureTop("./Ressources/Textures/Grass/top.jpg");
 	Texture textureBottom("./Ressources/Textures/Grass/bottom.jpg");
 
-	Scratchy::Color color(64, 100, 90);
+	Scratchy::Color color(64, 190, 90);
+	Scratchy::Color color1(190, 190, 90);
+	Scratchy::Color color2(64, 190, 190);
 
-	Scratchy::Cube* cube = new Scratchy::Cube(Position3(2, 0, 0), 1, textureSide, textureTop, textureBottom);
+	Scratchy::Cube* cube = new Scratchy::Cube(Position3(0, 0, 0), 1, textureSide, textureTop, textureBottom);
+	//cube->drawWireframe(true);
 	window->addMesh(*cube);
 
-	Scratchy::Rect* rect = new Scratchy::Rect(Position3(-2.5, 0.5, 0),
-		Position3(-1.5, 0.5, 0),
-		Position3(-1.5, -0.5, 0),
-		Position3(-2.5, -0.5, 0),
+	Scratchy::Cube* cube2 = new Scratchy::Cube(Position3(-2, 0, 0), 1, color1);
+	window->addMesh(*cube2);
+
+	Scratchy::Cube* cube3 = new Scratchy::Cube(Position3(2, 0, 0), 1, color2);
+	window->addMesh(*cube3);
+
+	/*Scratchy::Rect* rect = new Scratchy::Rect(Position3(-0.5, 0.5, 0),
+		Position3(0.5, 0.5, 0),
+		Position3(0.5, -0.5, 0),
+		Position3(-0.5, -0.5, 0),
 		textureSide);
 
 	window->addMesh(*rect);
 
-	/*Scratchy::Triangle* triangle = new Scratchy::Triangle(Position3(-0.5, 0.5, 0), Position3(0.5, 0.5, 0), Position3(0.5, -0.5, 0), textureSide);
-	window->addMesh(*triangle);*/
+
+	Scratchy::Rect* rect5 = new Scratchy::Rect(Position3(-0.5, 2.5, 0),
+		Position3(0.5, 2.5, 0),
+		Position3(0.5, 1.5, 0),
+		Position3(-0.5, 1.5, 0),
+		textureTop);
+
+	window->addMesh(*rect5);
+
+	Scratchy::Rect* rect6 = new Scratchy::Rect(Position3(-0.5, -1.5, 0),
+		Position3(0.5, -1.5, 0),
+		Position3(0.5, -2.5, 0),
+		Position3(-0.5, -2.5, 0),
+		textureBottom);
+
+	window->addMesh(*rect6);*/
+
+
+	/// 
+
+	/*Scratchy::Rect* rect1 = new Scratchy::Rect(Position3(1.5, 0.5, 0),
+		Position3(2.5, 0.5, 0),
+		Position3(2.5, -0.5, 0),
+		Position3(1.5, -0.5, 0),
+		color);
+	window->addMesh(*rect1);
+
+	Scratchy::Rect* rect3 = new Scratchy::Rect(Position3(1.5, 2.5, 0),
+		Position3(2.5, 2.5, 0),
+		Position3(2.5, 1.5, 0),
+		Position3(1.5, 1.5, 0),
+		color1);
+	window->addMesh(*rect3);
+
+	Scratchy::Rect* rect4 = new Scratchy::Rect(Position3(1.5, -1.5, 0),
+		Position3(2.5, -1.5, 0),
+		Position3(2.5, -2.5, 0),
+		Position3(1.5, -2.5, 0),
+		color2);
+	window->addMesh(*rect4);*/
+
 
 	int size = -1;
 
@@ -62,7 +110,8 @@ int main() {
 		window->clear();
 
 		window->drawMeshes();
-		//break;
+
+		//rect->rotate();
 
 		window->swapBuffer();
 		window->pollEvents();

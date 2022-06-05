@@ -10,7 +10,7 @@ using namespace std;
 
 void errorCallback(int error_code, const char* description);
 
-Window::Window(int width, int height, const std::string &title) : Viewport(width, height) {
+Window::Window(int width, int height, const std::string& title) : Viewport(width, height) {
 	setTitle(title);
 	camera = unique_ptr<Camera>(new Camera(glm::vec3(0.0f, 2.0f, 5.0f)));
 	mousePos = std::unique_ptr<Position2>(new Position2(400, 300));
@@ -64,8 +64,8 @@ void Window::close() {
 }
 
 bool Window::isOpen() const {
-	 if (glfwWindowShouldClose(window))
-		 return false;
+	if (glfwWindowShouldClose(window))
+		return false;
 
 	return state == OPEN ? true : false;
 }
@@ -83,24 +83,13 @@ void Window::pollEvents() {
 	glfwPollEvents();
 }
 
-void Window::addMesh(Mesh &mesh) {
-	bool shaderFound = false;
+void Window::addMesh(Mesh& mesh) {
 
-	for (Shader *shader: shaders) {
-		if (shader->vertexShaderPath == mesh.vertexShaderPath
-			&& shader->fragmentShaderPath == mesh.fragmentShaderPath) {
-			shaderFound = true;
-			mesh.setShader(*shader);
-			break;
-		}
-	}
-	if (!shaderFound) {
-		Shader *shader = new Shader(mesh.vertexShaderPath, mesh.fragmentShaderPath);
-		mesh.setShader(*shader);
+	Shader* shader = new Shader(mesh.vertexShaderPath, mesh.fragmentShaderPath);
+	mesh.setShader(*shader);
 
-		shaders.insert(shaders.end(), shader);
-	}
-//	&mesh.shader->ID;
+	shaders.insert(shaders.end(), shader);
+	//	&mesh.shader->ID;
 	std::cout << "C: " << &mesh.shader->ID << std::endl;
 	meshes.push_back(&mesh);
 	std::cout << "D: " << &meshes[0]->shader->ID << std::endl;
@@ -122,9 +111,9 @@ void Window::drawMeshes() {
 		if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
 			camera->processKeyboard(Camera::RIGHT, deltaTime);
 
-		for (auto mesh: meshes) {
+		for (auto mesh : meshes) {
 			mesh->draw(getWidth(), getHeight(), camera->getViewMatrix());
-			mesh->rotate();
+			//mesh->rotate();
 		}
 	}
 }
@@ -136,14 +125,14 @@ bool Window::isKeyPressed(int key) {
 void Window::setCallbacks() {
 	glfwSetWindowUserPointer(window, reinterpret_cast<void*>(this));
 
-//	glDebugMessageCallback(messageCallback, 0 );
+	//	glDebugMessageCallback(messageCallback, 0 );
 	glfwSetErrorCallback(errorCallback);
 	glfwSetCursorPosCallback(window, processMouse);
 	glfwSetFramebufferSizeCallback(Window::window, processResize);
 }
 
-void Window::processMouse(GLFWwindow *window, double x, double y) {
-	Window *handler = reinterpret_cast<Window *>(glfwGetWindowUserPointer(window));
+void Window::processMouse(GLFWwindow* window, double x, double y) {
+	Window* handler = reinterpret_cast<Window*>(glfwGetWindowUserPointer(window));
 	if (!handler->mouseAlreadyUsed) {
 		handler->mousePos->setPosition(x, y);
 		handler->mouseAlreadyUsed = true;
@@ -156,22 +145,22 @@ void Window::processMouse(GLFWwindow *window, double x, double y) {
 	handler->camera->processMouseMovement(xOffset, yOffset);
 }
 
-void Window::processResize(GLFWwindow *window, int width, int height) {
-	Window *handler = reinterpret_cast<Window *>(glfwGetWindowUserPointer(window));
+void Window::processResize(GLFWwindow* window, int width, int height) {
+	Window* handler = reinterpret_cast<Window*>(glfwGetWindowUserPointer(window));
 
 	glViewport(0, 0, width, height);
 	handler->setSize(width, height);
 }
 
-const std::string &Window::getTitle() const {
+const std::string& Window::getTitle() const {
 	return Window::title;
 }
 
-void Window::setTitle(const std::string &title) {
+void Window::setTitle(const std::string& title) {
 	Window::title = title;
 }
 
-const Color &Window::getClearColor() const {
+const Color& Window::getClearColor() const {
 	return clearColor;
 }
 
