@@ -1,4 +1,4 @@
-## Scratchy
+# Scratchy
 
 I present to you my C++ graphics library. It's not very advanced but the goal was more to understand the underside of game engines such as Unreal Engine, Godot or Unity. I am now able to understand how shaders, texturing, texture mapping works. With this you can arrange different 3D and 2D shapes in an environment and add the textures you want. A more advanced version will arrive next year!
 
